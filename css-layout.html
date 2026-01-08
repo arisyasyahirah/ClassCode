@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Flexbox & Grid Master Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #main-heading { color: rgb(255, 255, 255); }
+        
+        /* Layout Lab Styling */
+        .layout-preview-container {
+            background: #f0f2f5;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 200px;
+            border-radius: 8px;
+        }
+
+        /* The dynamic container controlled by the student */
+        #dynamicContainer {
+            display: flex; /* Default */
+            gap: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            min-height: 150px;
+            transition: all 0.4s ease;
+        }
+
+        .layout-item {
+            background: #4a90e2;
+            color: white;
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            flex: 1; /* Default */
+            min-width: 50px;
+        }
+
+        .comparison-card {
+            background: #fff;
+            border-left: 5px solid #333;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .property-tag {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html" class="active">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">Flexbox & Grid Layouts</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>CSS Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="css-intro.html"><i class="fas fa-play-circle"></i> Introduction</a></li>
+                        <li><a href="css-selectors.html"><i class="fas fa-mouse-pointer"></i> Selectors</a></li>
+                        <li><a href="css-colors.html"><i class="fas fa-palette"></i> Colors</a></li>
+                        <li><a href="css-boxmodel.html"><i class="fas fa-square"></i> The Box Model</a></li>
+                        <li><a href="css-typography.html"><i class="fas fa-font"></i> Typography</a></li>
+                        <li><a href="css-layout.html" class="active"><i class="fas fa-th-large"></i> Flexbox & Grid</a></li>
+                        <li><a href="css-positioning.html"><i class="fas fa-arrows-alt"></i> Positioning</a></li>
+                        <li><a href="css-animations.html"><i class="fas fa-magic"></i> Animations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Modern Layout Techniques</h1>
+                <p>Gone are the days of using tables or floats for layout. Today, we use <b>Flexbox</b> for alignment in one direction and <b>CSS Grid</b> for full-page structures.</p>
+
+                <h2>1. CSS Flexbox (1D Layout)</h2>
+                <p>Flexbox is best for aligning items in a row or a column. It is highly flexible (hence the name) and makes centering elements incredibly easy.</p>
+                
+                <ul>
+                    <li><span class="property-tag">flex-direction</span>: Row (horizontal) or Column (vertical).</li>
+                    <li><span class="property-tag">justify-content</span>: Aligns items along the <b>Main Axis</b> (left, center, space-between).</li>
+                    <li><span class="property-tag">align-items</span>: Aligns items along the <b>Cross Axis</b> (top, center, bottom).</li>
+                </ul>
+
+                <h2>2. CSS Grid (2D Layout)</h2>
+                <p>Grid is designed for two-dimensional layouts—both rows and columns at the same time. It is perfect for complex dashboard-style layouts.</p>
+                
+                <ul>
+                    <li><span class="property-tag">grid-template-columns</span>: Defines how many columns and their width (e.g., <code>1fr 1fr 1fr</code>).</li>
+                    <li><span class="property-tag">gap</span>: The spacing between rows and columns.</li>
+                </ul>
+
+                <div class="comparison-card">
+                    <h4>Which one should I use?</h4>
+                    <p><b>Use Flexbox when:</b> You have a small group of items to align (like a navbar or buttons inside a card).</p>
+                    <p><b>Use Grid when:</b> You are building the overall structure of the whole web page.</p>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">The Interactive Layout Lab</div>
+                <p>Switch between Flexbox and Grid properties below to see how the blue boxes react.</p>
+                
+                <div class="layout-preview-container">
+                    <div id="dynamicContainer">
+                        <div class="layout-item">1</div>
+                        <div class="layout-item">2</div>
+                        <div class="layout-item">3</div>
+                    </div>
+                </div>
+
+                <div class="editor-container">
+                    <textarea class="code-editor" id="cssEditor" title="CSS editor" rows="12">/* Try 'flex' or 'grid' */
+#dynamicContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+/* If using grid, try:
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+*/</textarea>
+                    
+                    <button class="run-btn" onclick="applyLayout()">
+                        <i class="fas fa-layer-group"></i> Apply Layout
+                    </button>
+                    
+                    <div class="output-container" style="margin-top: 20px;">
+                        <div class="output-title">Layout Log</div>
+                        <pre id="outputConsole">Current Mode: Flexbox</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Study Tips for Success</h2>
+                <div class="test-box" style="background-color: #fff4e5; border-left: 5px solid #ff9800; padding: 25px;">
+                    <ul>
+                        <li><b>The Golden Rule:</b> To use these properties, you MUST apply <code>display: flex</code> or <code>display: grid</code> to the <b>Parent</b> element.</li>
+                        <li><b>Centering Hack:</b> To perfectly center anything, use: <br><code>display: flex; justify-content: center; align-items: center;</code></li>
+                        <li><b>The FR Unit:</b> In Grid, <code>1fr</code> stands for "fractional unit." Using <code>grid-template-columns: 1fr 2fr;</code> makes the second column twice as wide as the first.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='css-positioning.html'">
+                    Next: Positioning
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section contact">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                </li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                </li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy;2025 ClassCode. All rights reserved.</p>
+    </div>
+</footer>
+    <script>
+        function applyLayout() {
+            const editor = document.getElementById('cssEditor');
+            const container = document.getElementById('dynamicContainer');
+            const output = document.getElementById('outputConsole');
+            const css = editor.value;
+
+            try {
+                // Extract only the styles for the dynamicContainer
+                const match = css.match(/#dynamicContainer\s*{([^}]*)}/);
+                if (match) {
+                    container.style.cssText = match[1];
+                    const isGrid = match[1].includes('grid');
+                    output.textContent = "Applied successfully! Mode: " + (isGrid ? "CSS Grid" : "Flexbox");
+                    output.style.color = "#98FB98";
+                }
+            } catch (err) {
+                output.textContent = "Syntax Error! Check your brackets.";
+                output.style.color = "#ff6b6b";
+            }
+        }
+        window.onload = applyLayout;
+    </script>
+</body>
+</html>

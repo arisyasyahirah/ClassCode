@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Advanced CSS Positioning & Stacking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CORE BRANDING - Design Stays */
+        #main-heading { color: rgb(255, 255, 255); font-size: 2.5rem; }
+        
+        /* EXPANDED CONTENT STYLING */
+        .page-container { display: flex; gap: 20px; padding: 20px; }
+        
+        .theory-master-container {
+            line-height: 1.7;
+            font-size: 1.05rem;
+            color: #2c3e50;
+        }
+
+        .position-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .position-comparison-table th, .position-comparison-table td {
+            padding: 15px;
+            border: 1px solid #e1e8ed;
+            text-align: left;
+        }
+
+        .position-comparison-table th {
+            background-color: #f8f9fa;
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* DYNAMIC LAB STYLING */
+        .lab-viewport {
+            height: 400px;
+            background: #fdfdfd;
+            border: 2px solid #34495e;
+            border-radius: 12px;
+            position: relative; /* Anchor for Absolute Positioning */
+            overflow: auto;
+            margin: 20px 0;
+            background-image: 
+                radial-gradient(#ddd 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .element-item {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Pre-styled boxes for contrast */
+        #box-base { background: #95a5a6; position: static; }
+        #box-target { background: #e74c3c; z-index: 10; }
+        #box-overlay { background: #2ecc71; position: absolute; bottom: 10px; right: 10px; opacity: 0.8; }
+
+        .study-hub {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .hub-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid #3498db;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .pro-note {
+            background: #fff9db;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #fab005;
+            margin-top: 15px;
+        }
+
+        .syntax-hl { color: #d63384; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html" class="active">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">Expert Positioning & Layering</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Positioning Masterclass</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="#intro"><i class="fas fa-info-circle"></i> The Rendering Model</a></li>
+                        <li><a href="#types"><i class="fas fa-th-list"></i> Position Mechanics</a></li>
+                        <li><a href="#lab"><i class="fas fa-flask"></i> Stacking Lab</a></li>
+                        <li><a href="#zindex"><i class="fas fa-layer-group"></i> Z-Index Logic</a></li>
+                        <li><a href="#tips"><i class="fas fa-graduation-cap"></i> Student Strategy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="theory-master-container" id="intro">
+                <h1>Beyond the Normal Flow</h1>
+                <p>Every element in HTML follows a <b>Visual Formatting Model</b>. By default, they are <span class="syntax-hl">static</span>, meaning they follow the natural scroll of the page. To create modern interfaces like sticky headers or pop-up modals, we must break this flow.</p>
+                
+                
+
+                <h2 id="types">1. The Five Position Schemes</h2>
+                <table class="position-comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Value</th>
+                            <th>Reference Point</th>
+                            <th>Takes Up Space?</th>
+                            <th>Typical Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Static</b></td>
+                            <td>Document Flow</td>
+                            <td>Yes</td>
+                            <td>Standard paragraphs/images.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Relative</b></td>
+                            <td>Itself</td>
+                            <td>Yes</td>
+                            <td>Tiny offsets or Parent anchors.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Absolute</b></td>
+                            <td>Nearest Positioned Parent</td>
+                            <td>No</td>
+                            <td>Icons, badges, or tooltips.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Fixed</b></td>
+                            <td>Browser Viewport</td>
+                            <td>No</td>
+                            <td>Navigation bars & Sidebars.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Sticky</b></td>
+                            <td>Scroll Threshold</td>
+                            <td>Yes</td>
+                            <td>Alphabetical list headers.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="test-section" id="lab">
+                <div class="test-header">The Positioning & Stacking Lab</div>
+                <p>Edit the <span class="syntax-hl">#box-target</span> (Red) to see how it interacts with the Static (Gray) and Absolute (Green) elements.</p>
+                
+                <div class="lab-viewport">
+                    <div class="element-item" id="box-base">Static A</div>
+                    <div class="element-item" id="box-target">Target Box</div>
+                    <div class="element-item" id="box-overlay">Absolute B</div>
+                </div>
+
+                <div class="editor-container">
+                    <textarea class="code-editor" id="cssEditor" title="CSS editor" rows="18">#box-target {
+    /* Step 1: Set Scheme (relative, absolute, or fixed) */
+    position: relative;
+
+    /* Step 2: Set Offsets */
+    top: 50px;
+    left: 80px;
+
+    /* Step 3: Set Layering */
+    z-index: 5;
+
+    /* Step 4: Visuals */
+    background: #e74c3c;
+    transform: rotate(5deg);
+}
+
+/* EXERCISE: Change position to 'absolute' 
+   and watch 'Static A' move! 
+*/</textarea>
+                    
+                    <button class="run-btn" onclick="applyLabChanges()">
+                        <i class="fas fa-rocket"></i> Re-Render Viewport
+                    </button>
+                    
+                    <div class="output-container" style="margin-top: 20px;">
+                        <div class="output-title">Rendering Engine Feedback</div>
+                        <pre id="outputConsole">Waiting for student input...</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="theory-master-container" id="zindex">
+                <h2>2. Mastery of Z-Index & Stacking Context</h2>
+                <p>Overlap is managed by the <b>Z-Index</b>. However, many students get frustrated when a higher Z-index doesn't work. This is usually due to <b>Stacking Contexts</b>.</p>
+                
+                
+
+                <div class="pro-note">
+                    <p><strong>Rule of Thumb:</strong> If an element has a parent with <code>z-index: 1</code>, no matter how high the child's z-index is (even 9999), it will still be trapped behind any element that has a parent with <code>z-index: 2</code>.</p>
+                </div>
+            </section>
+
+            <section class="study-hub" id="tips">
+                <div class="hub-card">
+                    <h3><i class="fas fa-lightbulb"></i> Exam Strategy</h3>
+                    <ul>
+                        <li><b>Absolute needs a Parent:</b> Always check if the parent has <code>position: relative</code>. If not, your element will fly to the top of the page.</li>
+                        <li><b>The Coordinate Trap:</b> Remember that <code>bottom: 0</code> means "stick to the bottom edge," not "move down."</li>
+                    </ul>
+                </div>
+                <div class="hub-card">
+                    <h3><i class="fas fa-brain"></i> Pro Trick</h3>
+                    <p>To center an element that is <code>position: absolute</code>, use this formula:</p>
+                    <code>top: 50%; left: 50%; <br> transform: translate(-50%, -50%);</code>
+                </div>
+            </section>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='css-animations.html'">
+                    Next: Transitions & Animations
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        /**
+         * Lab Logic: Parses CSS input and updates the visualizer.
+         * Includes error handling and console logging for student feedback.
+         */
+        function applyLabChanges() {
+            const editor = document.getElementById('cssEditor');
+            const target = document.getElementById('box-target');
+            const output = document.getElementById('outputConsole');
+            const code = editor.value;
+
+            try {
+                // Regex to find the content inside the #box-target selector
+                const match = code.match(/#box-target\s*{([^}]*)}/);
+                
+                if (match && match[1]) {
+                    // Reset existing styles
+                    target.style.cssText = "";
+                    
+                    // Inject user styles
+                    target.style.cssText = match[1];
+                    
+                    // Logic check for educational feedback
+                    const pos = target.style.position;
+                    let feedback = "Render Successful! Current Position: " + (pos || "static");
+                    
+                    if (pos === 'absolute') {
+                        feedback += "\nAlert: Removed from flow. Notice other elements shifting.";
+                    }
+                    
+                    output.textContent = feedback;
+                    output.style.color = "#2ecc71";
+                } else {
+                    throw new Error("Selector #box-target not found or formatted incorrectly.");
+                }
+            } catch (err) {
+                output.textContent = "Syntax Error: " + err.message;
+                output.style.color = "#e74c3c";
+            }
+        }
+
+        // Run once on load to establish initial state
+        window.onload = function() {
+            applyLabChanges();
+            console.log("ClassCode Positioning Lab: Initialized.");
+        };
+    </script>
+</body>
+</html>

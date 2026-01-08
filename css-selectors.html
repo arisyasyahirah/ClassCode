@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | CSS Selectors & Specificity Master Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #main-heading { color: rgb(255, 255, 255); }
+        
+        /* Interactive Demo Styling */
+        .demo-area {
+            padding: 30px;
+            margin: 20px 0;
+            border: 2px dashed #bbb;
+            border-radius: 12px;
+            background-color: #fcfcfc;
+            text-align: center;
+        }
+
+        #target-element {
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .study-tip-card {
+            background-color: #f0f4f8;
+            border-left: 5px solid #2980b9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .points-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .points-table th, .points-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .points-table th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html" class="active">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">Selectors & Specificity</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>CSS Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="css-intro.html"><i class="fas fa-play-circle"></i> Introduction to CSS</a></li>
+                        <li><a href="css-selectors.html" class="active"><i class="fas fa-mouse-pointer"></i> Selectors & Specificity</a></li>
+                        <li><a href="css-colors.html"><i class="fas fa-palette"></i> Colors & Backgrounds</a></li>
+                        <li><a href="css-boxmodel.html"><i class="fas fa-square"></i> The Box Model</a></li>
+                        <li><a href="css-typography.html"><i class="fas fa-font"></i> Typography & Fonts</a></li>
+                        <li><a href="css-layout.html"><i class="fas fa-th-large"></i> Flexbox & Grid</a></li>
+                        <li><a href="css-positioning.html"><i class="fas fa-arrows-alt"></i> Positioning</a></li>
+                        <li><a href="css-animations.html"><i class="fas fa-magic"></i> Transitions & Effects</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="cssPage.html"><i class="fas fa-arrow-left"></i> Back to CSS Overview</a></li>
+                        <li><a href="css-colors.html"><i class="fas fa-arrow-right"></i> Next: Colors</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Mastering Element Targeting</h1>
+                <p>CSS selectors allow you to pick exactly which HTML elements you want to style. However, when multiple rules try to change the same element, <b>Specificity</b> acts as the referee to decide who wins.</p>
+
+                
+
+                <h2>Advanced Selector Types</h2>
+                <p>Beyond simple IDs and Classes, you can combine selectors to be more precise:</p>
+                <ul>
+                    <li><b>Descendant Selector (space):</b> Targets elements inside another element (e.g., <code>div p</code> targets all paragraphs inside a div).</li>
+                    <li><b>Child Selector (>):</b> Targets only direct children.</li>
+                    <li><b>Pseudo-classes (:):</b> Targets elements in a specific state, like <code>:hover</code> (when the mouse is over it) or <code>:nth-child(2)</code>.</li>
+                </ul>
+
+                <h2>The Specificity Point System</h2>
+                <p>Browsers calculate a "score" for every CSS rule. The rule with the highest score is applied to the element.</p>
+                
+                <table class="points-table">
+                    <thead>
+                        <tr>
+                            <th>Selector Type</th>
+                            <th>Points</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inline Style</td>
+                            <td>1000</td>
+                            <td><code>style="color: red;"</code></td>
+                        </tr>
+                        <tr>
+                            <td>ID Selector</td>
+                            <td>100</td>
+                            <td><code>#header</code></td>
+                        </tr>
+                        <tr>
+                            <td>Class, Attribute, Pseudo-class</td>
+                            <td>10</td>
+                            <td><code>.menu</code>, <code>:hover</code></td>
+                        </tr>
+                        <tr>
+                            <td>Element (Tag) Selector</td>
+                            <td>1</td>
+                            <td><code>h1</code>, <code>p</code>, <code>div</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">The Specificity Conflict Lab</div>
+                <p>This element has an <b>ID</b> and a <b>Class</b>. Even if the Class rule is written 100 times, the ID will still win. Try it!</p>
+                
+                <div class="demo-area">
+                    <div id="target-element" class="demo-box">The Winner Stays!</div>
+                </div>
+
+                <div class="editor-container">
+                    <textarea class="code-editor" id="cssEditor" title="CSS editor" rows="12">/* Rule 1: Element (1 point) */
+div {
+    color: gray;
+    font-family: sans-serif;
+}
+
+/* Rule 2: Class (10 points) */
+.demo-box {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+/* Rule 3: ID (100 points) */
+#target-element {
+    color: #2196F3;
+    border-bottom: 4px solid #2196F3;
+}
+
+/* Rule 4: Class again (Still only 10 points) */
+/* Even if this is at the bottom, the ID wins! */
+.demo-box {
+    color: green;
+}</textarea>
+                    
+                    <button class="run-btn" onclick="applySelectors()">
+                        <i class="fas fa-bolt"></i> Update & Calculate
+                    </button>
+                    
+                    <div class="output-container" style="margin-top: 20px;">
+                        <div class="output-title">Specificity Analysis</div>
+                        <pre id="outputConsole">Click the button to see the "Winning" style.</pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="study-tip-card">
+                <h4><i class="fas fa-graduation-cap"></i> Student Study Tips</h4>
+                <ul>
+                    <li><b>The "0-0-0-0" Rule:</b> Write your specificity as four numbers (Inline-ID-Class-Element). A <code>0-1-0-0</code> (ID) always beats a <code>0-0-2-0</code> (two classes).</li>
+                    <li><b>Avoid IDs for Styling:</b> Professional developers prefer classes. Using IDs makes your CSS too "strong," making it hard to override later.</li>
+                    <li><b>Last Resort:</b> Only use <code>!important</code> if you are fighting with a third-party library. It is considered bad practice in clean code.</li>
+                    <li><b>Read Right-to-Left:</b> CSS selectors are read by the browser from right to left. <code>ul li a</code> means "Find all links, that are in list items, that are in a unordered list."</li>
+                </ul>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='css-colors.html'">
+                    Next: Colors & Backgrounds
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function applySelectors() {
+            const editor = document.getElementById('cssEditor');
+            const target = document.getElementById('target-element');
+            const output = document.getElementById('outputConsole');
+            const cssText = editor.value;
+
+            let styleTag = document.getElementById('dynamic-styles');
+            if (!styleTag) {
+                styleTag = document.createElement('style');
+                styleTag.id = 'dynamic-styles';
+                document.head.appendChild(styleTag);
+            }
+            
+            styleTag.innerHTML = cssText;
+            
+            const computedStyle = window.getComputedStyle(target);
+            const finalColor = computedStyle.color;
+            
+            output.textContent = "Applied! \nWinning Color: " + finalColor + "\nResult: ID Selector (Rule 3) has overridden the classes and elements.";
+            output.style.color = "#98FB98";
+        }
+        window.onload = applySelectors;
+    </script>
+</body>
+</html>

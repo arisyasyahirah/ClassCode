@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | HTML Text & Inline Elements</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html" class="active">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- SUBJECT TITLE -->
+    <section class="subject-header">
+        <h2>Text & Inline Elements</h2>
+    </section>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>HTML5 Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="html-intro.html"><i class="fas fa-play-circle"></i> Introduction to HTML5</a></li>
+                        <li><a href="html-structure.html"><i class="fas fa-code"></i> Structure & Syntax</a></li>
+                        <li><a href="html-text.html" class="active"><i class="fas fa-font"></i> Text & Inline Elements</a></li>
+                        <li><a href="html-lists.html"><i class="fas fa-list"></i> Lists</a></li>
+                        <li><a href="html-links.html"><i class="fas fa-link"></i> Links & Images</a></li>
+                        <li><a href="html-forms.html"><i class="fas fa-edit"></i> Forms (HTML5)</a></li>
+                        <li><a href="html-multimedia.html"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                        <li><a href="html-semantic.html"><i class="fas fa-sitemap"></i> Semantic HTML</a></li>
+                        <li><a href="html-exercises.html"><i class="fas fa-puzzle-piece"></i> Examples & Exercises</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="htmlPage.html"><i class="fas fa-arrow-left"></i> Back to HTML Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <section class="content-section">
+                <h1>HTML Text Formatting & Inline Elements</h1>
+                
+                <p>Inline elements are used within block-level elements to format content without creating new lines. They only take up as much width as necessary.</p>
+            
+                <h2>Text Formatting Elements</h2>
+                
+                <h3>Basic Formatting</h3>
+                <div class="example-box">
+                    <h4>Common Text Formatting Tags:</h4>
+                    <table class="element-table">
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Purpose</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>&lt;strong&gt;</code></td>
+                                <td>Important text (semantic)</td>
+                                <td><strong>This is important</strong></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;b&gt;</code></td>
+                                <td>Bold text (visual only)</td>
+                                <td><b>Bold text</b></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;em&gt;</code></td>
+                                <td>Emphasized text (semantic)</td>
+                                <td><em>Emphasized text</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;i&gt;</code></td>
+                                <td>Italic text (visual only)</td>
+                                <td><i>Italic text</i></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;mark&gt;</code></td>
+                                <td>Highlighted text</td>
+                                <td><mark>Highlighted text</mark></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;small&gt;</code></td>
+                                <td>Smaller text</td>
+                                <td><small>Small text</small></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;del&gt;</code></td>
+                                <td>Deleted text</td>
+                                <td><del>Deleted text</del></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;ins&gt;</code></td>
+                                <td>Inserted text</td>
+                                <td><ins>Inserted text</ins></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;sub&gt;</code></td>
+                                <td>Subscript</td>
+                                <td>H<sub>2</sub>O</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;sup&gt;</code></td>
+                                <td>Superscript</td>
+                                <td>x<sup>2</sup></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>Semantic vs Non-semantic Formatting</h3>
+                <div class="example-box">
+                    <p><strong>Semantic elements</strong> convey meaning about the content's importance:</p>
+                    <p><strong>Warning:</strong> The system will shut down in 5 minutes.</p>
+                    <p><em>Please read the instructions carefully.</em></p>
+                    
+                    <p><strong>Non-semantic elements</strong> are purely visual:</p>
+                    <p><b>This text is bold</b> and <i>this text is italicized</i>.</p>
+                </div>
+                
+                <h2>Inline Text Elements</h2>
+                <div class="example-box">
+                    <h4>Other Useful Inline Elements:</h4>
+                    <table class="element-table">
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Purpose</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>&lt;span&gt;</code></td>
+                                <td>Generic inline container</td>
+                                <td><span style="color: blue;">Styled text</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;code&gt;</code></td>
+                                <td>Inline code</td>
+                                <td>Use <code>console.log()</code> for debugging</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;kbd&gt;</code></td>
+                                <td>Keyboard input</td>
+                                <td>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;samp&gt;</code></td>
+                                <td>Sample output</td>
+                                <td>Error: <samp>File not found</samp></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;var&gt;</code></td>
+                                <td>Variable</td>
+                                <td>The variable <var>x</var> represents...</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;abbr&gt;</code></td>
+                                <td>Abbreviation</td>
+                                <td><abbr title="HyperText Markup Language">HTML</abbr></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;cite&gt;</code></td>
+                                <td>Citation</td>
+                                <td><cite>The Art of Programming</cite></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;q&gt;</code></td>
+                                <td>Short quotation</td>
+                                <td><q>To be or not to be</q></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2>Best Practices</h2>
+                <ul>
+                    <li>Use <code>&lt;strong&gt;</code> for important text instead of <code>&lt;b&gt;</code></li>
+                    <li>Use <code>&lt;em&gt;</code> for emphasis instead of <code>&lt;i&gt;</code></li>
+                    <li>Always provide title attribute for <code>&lt;abbr&gt;</code> elements</li>
+                    <li>Use <code>&lt;span&gt;</code> when no semantic element is appropriate</li>
+                    <li>Combine inline elements for complex formatting</li>
+                </ul>
+            </section>
+
+            <!-- Code Example Section -->
+            <section class="code-section">
+                <div class="code-header">
+                    <div class="code-title">Complete Example</div>
+                    <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                </div>
+                <div class="code-block">
+                    <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Text Formatting Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Chemical Formula&lt;/h1&gt;
+    &lt;p&gt;Water is H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;
+    
+    &lt;h2&gt;Important Notice&lt;/h2&gt;
+    &lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; The system will update at &lt;time&gt;10:00&lt;/time&gt;.&lt;/p&gt;
+    
+    &lt;h2&gt;Code Example&lt;/h2&gt;
+    &lt;p&gt;In JavaScript, use &lt;code&gt;console.log()&lt;/code&gt; for debugging.&lt;/p&gt;
+    
+    &lt;h2&gt;Mathematics&lt;/h2&gt;
+    &lt;p&gt;The formula is: x&lt;sup&gt;2&lt;/sup&gt; + y&lt;sup&gt;2&lt;/sup&gt; = z&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+    
+    &lt;h2&gt;Mixed Formatting&lt;/h2&gt;
+    &lt;p&gt;
+        This is &lt;em&gt;emphasized&lt;/em&gt; and &lt;strong&gt;important&lt;/strong&gt; text with 
+        &lt;mark&gt;highlighting&lt;/mark&gt; and &lt;small&gt;small text&lt;/small&gt;.
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                </div>
+            </section>
+
+            <!-- Live Test Section -->
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Edit the code</div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="htmlEditor" title="HTML code editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Text Formatting&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Practice Text Formatting&lt;/h1&gt;
+    &lt;p&gt;Make this text &lt;strong&gt;bold and important&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;Water formula: H2O (use subscript)&lt;/p&gt;
+    &lt;p&gt;E = mc2 (use superscript)&lt;/p&gt;
+    &lt;p&gt;Highlight the key word in this sentence.&lt;/p&gt;
+    &lt;p&gt;Press Ctrl + C to copy text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                    
+                    <button class="run-btn" onclick="runHTMLCode()">
+                        <i class="fas fa-play"></i>
+                        Run Code
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Output</div>
+                        <iframe id="outputFrame" title="HTML Code Output"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Test Box -->
+            <div class="test-box">
+                <h4>📝 Quick Quiz</h4>
+                <p><strong>Question 1:</strong> What's the semantic difference between <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code>?</p>
+                <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+                <div class="answer" id="answer1">
+                    <strong>Answer:</strong> <code>&lt;strong&gt;</code> indicates that the text has strong importance, while <code>&lt;b&gt;</code> is purely for visual bold formatting without semantic meaning.
+                </div>
+                
+                <p><strong>Question 2:</strong> Which element would you use for chemical formulas like CO₂?</p>
+                <button class="answer-btn" onclick="toggleAnswer('answer2')">Show Answer</button>
+                <div class="answer" id="answer2">
+                    <strong>Answer:</strong> Use <code>&lt;sub&gt;</code> for subscript: CO<sub>2</sub>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="nav-btn prev" onclick="window.location.href='html-structure.html'">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous: Structure & Syntax
+                </button>
+                <button class="nav-btn next" onclick="window.location.href='html-lists.html'">
+                    Next: Lists
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        // Function to run HTML code in the output iframe
+        function runHTMLCode() {
+            const editor = document.getElementById('htmlEditor');
+            const outputFrame = document.getElementById('outputFrame');
+            const code = editor.value;
+            
+            const iframeDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(code);
+            iframeDoc.close();
+        }
+        
+        // Function to copy example code to editor
+        function copyToEditor() {
+            const exampleCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Formatting Example</title>
+</head>
+<body>
+    <h1>Chemical Formula</h1>
+    <p>Water is H<sub>2</sub>O.</p>
+    
+    <h2>Important Notice</h2>
+    <p><strong>Warning:</strong> The system will update at <time>10:00</time>.</p>
+    
+    <h2>Code Example</h2>
+    <p>In JavaScript, use <code>console.log()</code> for debugging.</p>
+    
+    <h2>Mathematics</h2>
+    <p>The formula is: x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup></p>
+    
+    <h2>Mixed Formatting</h2>
+    <p>
+        This is <em>emphasized</em> and <strong>important</strong> text with 
+        <mark>highlighting</mark> and <small>small text</small>.
+    </p>
+</body>
+</html>`;
+            
+            document.getElementById('htmlEditor').value = exampleCode;
+            runHTMLCode();
+            
+            document.querySelector('.test-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Toggle answer visibility
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            answer.classList.toggle('show');
+        }
+        
+        // Initialize with first run
+        window.onload = function() {
+            runHTMLCode();
+        };
+    </script>
+</body>
+</html>

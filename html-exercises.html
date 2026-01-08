@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | HTML Examples & Exercises</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html" class="active">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- SUBJECT TITLE -->
+    <section class="subject-header">
+        <h2>HTML Examples & Exercises</h2>
+    </section>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>HTML5 Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="html-intro.html"><i class="fas fa-play-circle"></i> Introduction to HTML5</a></li>
+                        <li><a href="html-structure.html"><i class="fas fa-code"></i> Structure & Syntax</a></li>
+                        <li><a href="html-text.html"><i class="fas fa-font"></i> Text & Inline Elements</a></li>
+                        <li><a href="html-lists.html"><i class="fas fa-list"></i> Lists</a></li>
+                        <li><a href="html-links.html"><i class="fas fa-link"></i> Links & Images</a></li>
+                        <li><a href="html-forms.html"><i class="fas fa-edit"></i> Forms (HTML5)</a></li>
+                        <li><a href="html-multimedia.html"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                        <li><a href="html-semantic.html"><i class="fas fa-sitemap"></i> Semantic HTML</a></li>
+                        <li><a href="html-exercises.html" class="active"><i class="fas fa-puzzle-piece"></i> Examples & Exercises</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="htmlPage.html"><i class="fas fa-arrow-left"></i> Back to HTML Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <section class="content-section">
+                <h1>HTML5 Practice & Exercises</h1>
+                
+                <p>This page contains practical exercises, examples, and challenges to test your HTML5 knowledge. Try solving these problems to reinforce your learning.</p>
+            
+                <h2>Beginner Exercises</h2>
+                
+                <div class="exercise-category">
+                    <h3>Exercise 1: Basic Page Structure</h3>
+                    <div class="exercise-box">
+                        <p><strong>Task:</strong> Create a complete HTML5 document with the following:</p>
+                        <ul>
+                            <li>Proper DOCTYPE declaration</li>
+                            <li>HTML element with lang attribute</li>
+                            <li>Head section with title and charset</li>
+                            <li>Body with a heading, paragraph, and horizontal rule</li>
+                        </ul>
+                        
+                        <button class="answer-btn" onclick="toggleExercise('exercise1')">Show Solution</button>
+                        <div class="answer" id="exercise1">
+                            <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+    &lt;p&gt;This is my first HTML page.&lt;/p&gt;
+    &lt;hr&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                        </div>
+                    </div>
+                    
+                    <h3>Exercise 2: Text Formatting</h3>
+                    <div class="exercise-box">
+                        <p><strong>Task:</strong> Create a paragraph with the following formatting:</p>
+                        <ul>
+                            <li>Bold important terms</li>
+                            <li>Italicize book titles</li>
+                            <li>Mark important text</li>
+                            <li>Show chemical formula: H<sub>2</sub>O</li>
+                            <li>Show mathematical equation: x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup></li>
+                        </ul>
+                        
+                        <button class="answer-btn" onclick="toggleExercise('exercise2')">Show Solution</button>
+                        <div class="answer" id="exercise2">
+                            <pre>&lt;p&gt;
+    &lt;strong&gt;HTML&lt;/strong&gt; is the standard markup language for web pages.
+    I'm reading &lt;em&gt;Web Development for Beginners&lt;/em&gt;.
+    Remember: &lt;mark&gt;always validate your code&lt;/mark&gt;.
+    Water formula: H&lt;sub&gt;2&lt;/sub&gt;O
+    Pythagorean theorem: x&lt;sup&gt;2&lt;/sup&gt; + y&lt;sup&gt;2&lt;/sup&gt; = z&lt;sup&gt;2&lt;/sup&gt;
+&lt;/p&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Intermediate Exercises</h2>
+                
+                <div class="exercise-category">
+                    <h3>Exercise 3: Navigation Menu</h3>
+                    <div class="exercise-box">
+                        <p><strong>Task:</strong> Create a navigation menu with:</p>
+                        <ul>
+                            <li>Unordered list with 5 items</li>
+                            <li>Each item should be a link</li>
+                            <li>One link should open in new tab</li>
+                            <li>Add a logo image before the menu</li>
+                        </ul>
+                        
+                        <button class="answer-btn" onclick="toggleExercise('exercise3')">Show Solution</button>
+                        <div class="answer" id="exercise3">
+                            <pre>&lt;nav&gt;
+    &lt;img src="logo.png" alt="Website Logo" width="50"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="blog.html"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://external.com" target="_blank"&gt;External&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+                        </div>
+                    </div>
+                    
+                    <h3>Exercise 4: Registration Form</h3>
+                    <div class="exercise-box">
+                        <p><strong>Task:</strong> Create a registration form with:</p>
+                        <ul>
+                            <li>Name (text input, required)</li>
+                            <li>Email (email input, required)</li>
+                            <li>Password (password input, min 8 chars)</li>
+                            <li>Date of birth (date input)</li>
+                            <li>Country (dropdown with 3 options)</li>
+                            <li>Subscribe checkbox</li>
+                            <li>Submit button</li>
+                        </ul>
+                        
+                        <button class="answer-btn" onclick="toggleExercise('exercise4')">Show Solution</button>
+                        <div class="answer" id="exercise4">
+                            <pre>&lt;form&gt;
+    &lt;label for="name"&gt;Full Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" minlength="8" required&gt;
+    
+    &lt;label for="dob"&gt;Date of Birth:&lt;/label&gt;
+    &lt;input type="date" id="dob" name="dob"&gt;
+    
+    &lt;label for="country"&gt;Country:&lt;/label&gt;
+    &lt;select id="country" name="country"&gt;
+        &lt;option value="malaysia"&gt;Malaysia&lt;/option&gt;
+        &lt;option value="singapore"&gt;Singapore&lt;/option&gt;
+        &lt;option value="indonesia"&gt;Indonesia&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;label&gt;
+        &lt;input type="checkbox" name="subscribe"&gt; Subscribe to newsletter
+    &lt;/label&gt;
+    
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Advanced Exercises</h2>
+                
+                <div class="exercise-category">
+                    <h3>Exercise 5: Responsive Product Card</h3>
+                    <div class="exercise-box">
+                        <p><strong>Task:</strong> Create a responsive product card with:</p>
+                        <ul>
+                            <li>Product image with alt text</li>
+                            <li>Product name as heading</li>
+                            <li>Product description</li>
+                            <li>Price with discount (if any)</li>
+                            <li>Rating stars</li>
+                            <li>Add to cart button</li>
+                            <li>Should be responsive (use CSS grid/flexbox)</li>
+                        </ul>
+                        
+                        <button class="answer-btn" onclick="toggleExercise('exercise5')">Show Solution</button>
+                        <div class="answer" id="exercise5">
+                            <pre>&lt;article class="product-card"&gt;
+    &lt;figure&gt;
+        &lt;img src="product.jpg" alt="Wireless Headphones"&gt;
+        &lt;figcaption&gt;Premium Wireless Headphones&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;div class="product-info"&gt;
+        &lt;h3&gt;Premium Wireless Headphones&lt;/h3&gt;
+        &lt;p&gt;Noise-cancelling headphones with 30-hour battery life.&lt;/p&gt;
+        
+        &lt;div class="price"&gt;
+            &lt;span class="current"&gt;$99.99&lt;/span&gt;
+            &lt;span class="original"&gt;$129.99&lt;/span&gt;
+            &lt;span class="discount"&gt;23% off&lt;/span&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="rating"&gt;
+            &lt;span&gt;★★★★☆&lt;/span&gt;
+            &lt;span&gt;(4.2/5)&lt;/span&gt;
+        &lt;/div&gt;
+        
+        &lt;button class="cart-btn"&gt;Add to Cart&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;style&gt;
+    .product-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        max-width: 300px;
+        display: grid;
+        gap: 15px;
+    }
+    .product-card img {
+        width: 100%;
+        height: auto;
+    }
+    .price .original {
+        text-decoration: line-through;
+        color: #999;
+        margin-left: 10px;
+    }
+    .discount {
+        color: green;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+&lt;/style&gt;</pre>
+                        </div>
+                    </div>
+                    
+                    <h3>Exercise 6: Complete Blog Layout</h3>
+                    <div class="exercise-box">
+                        <p><strong>Task:</strong> Create a complete blog layout with:</p>
+                        <ul>
+                            <li>Semantic HTML structure</li>
+                            <li>Header with logo and navigation</li>
+                            <li>Main content area with articles</li>
+                            <li>Sidebar with recent posts and categories</li>
+                            <li>Footer with contact info</li>
+                            <li>Responsive design</li>
+                        </ul>
+                        
+                        <button class="answer-btn" onclick="toggleExercise('exercise6')">Show Solution</button>
+                        <div class="answer" id="exercise6">
+                            <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Blog&lt;/title&gt;
+    &lt;style&gt;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        
+        header { background: #2b6777; color: white; padding: 1rem; }
+        nav ul { display: flex; list-style: none; gap: 1rem; }
+        nav a { color: white; text-decoration: none; }
+        
+        .container { 
+            display: grid; 
+            grid-template-columns: 3fr 1fr; 
+            gap: 2rem; 
+            padding: 2rem; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        article { margin-bottom: 2rem; padding: 1rem; background: #f9f9f9; }
+        
+        aside { background: #e9f5f9; padding: 1rem; }
+        
+        footer { 
+            background: #333; 
+            color: white; 
+            text-align: center; 
+            padding: 1rem; 
+            margin-top: 2rem; 
+        }
+        
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            nav ul { flex-direction: column; }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Tech Blog&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Articles&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main class="container"&gt;
+        &lt;section&gt;
+            &lt;article&gt;
+                &lt;h2&gt;HTML5 Best Practices&lt;/h2&gt;
+                &lt;p&gt;Learn the best practices for writing clean HTML5 code...&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article&gt;
+                &lt;h2&gt;CSS Grid Tutorial&lt;/h2&gt;
+                &lt;p&gt;Master CSS Grid layout with this comprehensive guide...&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;Recent Posts&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;JavaScript ES6 Features&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Responsive Design Tips&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 My Tech Blog. All rights reserved.&lt;/p&gt;
+        &lt;p&gt;Contact: contact@myblog.com&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Project Challenges</h2>
+                
+                <div class="exercise-category">
+                    <h3>Project 1: Personal Portfolio</h3>
+                    <div class="exercise-box">
+                        <p><strong>Challenge:</strong> Create a personal portfolio website with:</p>
+                        <ul>
+                            <li>Home page with introduction</li>
+                            <li>Projects showcase with images</li>
+                            <li>About me section</li>
+                            <li>Contact form</li>
+                            <li>Responsive navigation</li>
+                            <li>Clean, modern design</li>
+                        </ul>
+                        
+                        <div class="hint-box">
+                            <p><strong>Hint:</strong> Start with wireframing, use semantic elements, and implement mobile-first design.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Project 2: E-commerce Product Page</h3>
+                    <div class="exercise-box">
+                        <p><strong>Challenge:</strong> Create an e-commerce product page with:</p>
+                        <ul>
+                            <li>Product image gallery</li>
+                            <li>Product details and description</li>
+                            <li>Customer reviews section</li>
+                            <li>Related products</li>
+                            <li>Add to cart functionality</li>
+                            <li>Responsive product cards</li>
+                        </ul>
+                        
+                        <div class="hint-box">
+                            <p><strong>Hint:</strong> Use figure/figcaption for images, structured data for product info, and CSS Grid for layout.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Practice Section -->
+            <section class="test-section">
+                <div class="test-header">Interactive Practice Area</div>
+                <div class="editor-container">
+                    <div class="practice-instructions">
+                        <h4>Practice Challenge: Create a Recipe Page</h4>
+                        <p>Create a recipe page with the following elements:</p>
+                        <ol>
+                            <li>A main heading with the recipe name</li>
+                            <li>A description paragraph</li>
+                            <li>An unordered list of ingredients</li>
+                            <li>An ordered list of cooking steps</li>
+                            <li>An image of the finished dish</li>
+                            <li>A table for nutrition information</li>
+                            <li>Proper semantic structure</li>
+                        </ol>
+                    </div>
+                    
+                    <textarea class="code-editor" id="htmlEditor" title="HTML code editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Recipe Challenge&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        img { max-width: 100%; height: auto; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Your recipe page code here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                    
+                    <button class="run-btn" onclick="runHTMLCode()">
+                        <i class="fas fa-play"></i>
+                        Run Code
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Output</div>
+                        <iframe id="outputFrame" title="HTML Code Output"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Solution Template Section -->
+            <section class="code-section">
+                <div class="code-header">
+                    <div class="code-title">Recipe Page Solution Template</div>
+                    <button class="try-it-btn" onclick="loadRecipeTemplate()">Load Template</button>
+                </div>
+                <div class="code-block">
+                    <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Chocolate Chip Cookies Recipe&lt;/title&gt;
+    &lt;style&gt;
+        body { 
+            font-family: 'Arial', sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6; 
+        }
+        header { text-align: center; margin-bottom: 30px; }
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        section { margin: 25px 0; }
+        h2 { color: #2b6777; border-bottom: 2px solid #2b6777; padding-bottom: 5px; }
+        ul, ol { margin-left: 20px; }
+        li { margin: 8px 0; }
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin: 20px 0; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 12px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #2b6777; 
+            color: white; 
+        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .prep-time { 
+            background: #e9f5f9; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 20px 0; 
+        }
+        footer { 
+            margin-top: 30px; 
+            text-align: center; 
+            color: #666; 
+            font-style: italic; 
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Classic Chocolate Chip Cookies&lt;/h1&gt;
+        &lt;p&gt;Soft, chewy, and loaded with chocolate chips - the perfect treat!&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;figure&gt;
+            &lt;img src="https://via.placeholder.com/800x400/8B4513/FFFFFF?text=Delicious+Chocolate+Chip+Cookies" 
+                 alt="Freshly baked chocolate chip cookies on a plate"&gt;
+            &lt;figcaption&gt;Freshly baked chocolate chip cookies&lt;/figcaption&gt;
+        &lt;/figure&gt;
+        
+        &lt;div class="prep-time"&gt;
+            &lt;h3&gt;Preparation Time&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Prep:&lt;/strong&gt; 15 minutes&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Cook:&lt;/strong&gt; 10 minutes&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Total:&lt;/strong&gt; 25 minutes&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Servings:&lt;/strong&gt; 24 cookies&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;section&gt;
+            &lt;h2&gt;Ingredients&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;2¼ cups all-purpose flour&lt;/li&gt;
+                &lt;li&gt;1 teaspoon baking soda&lt;/li&gt;
+                &lt;li&gt;1 teaspoon salt&lt;/li&gt;
+                &lt;li&gt;1 cup butter, softened&lt;/li&gt;
+                &lt;li&gt;¾ cup granulated sugar&lt;/li&gt;
+                &lt;li&gt;¾ cup packed brown sugar&lt;/li&gt;
+                &lt;li&gt;1 teaspoon vanilla extract&lt;/li&gt;
+                &lt;li&gt;2 large eggs&lt;/li&gt;
+                &lt;li&gt;2 cups semisweet chocolate chips&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        
+        &lt;section&gt;
+            &lt;h2&gt;Instructions&lt;/h2&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Preheat oven to 375°F (190°C)&lt;/li&gt;
+                &lt;li&gt;In small bowl, mix flour, baking soda and salt; set aside&lt;/li&gt;
+                &lt;li&gt;In large bowl, beat butter and sugars until creamy&lt;/li&gt;
+                &lt;li&gt;Beat in vanilla and eggs until light and fluffy&lt;/li&gt;
+                &lt;li&gt;Gradually beat in flour mixture&lt;/li&gt;
+                &lt;li&gt;Stir in chocolate chips&lt;/li&gt;
+                &lt;li&gt;Drop rounded tablespoons onto ungreased baking sheets&lt;/li&gt;
+                &lt;li&gt;Bake 9 to 11 minutes or until golden brown&lt;/li&gt;
+                &lt;li&gt;Cool on baking sheets for 2 minutes; remove to wire racks to cool completely&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/section&gt;
+        
+        &lt;section&gt;
+            &lt;h2&gt;Nutrition Information&lt;/h2&gt;
+            &lt;table&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Nutrient&lt;/th&gt;
+                        &lt;th&gt;Amount per Serving&lt;/th&gt;
+                        &lt;th&gt;% Daily Value*&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Calories&lt;/td&gt;
+                        &lt;td&gt;220&lt;/td&gt;
+                        &lt;td&gt;11%&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Total Fat&lt;/td&gt;
+                        &lt;td&gt;12g&lt;/td&gt;
+                        &lt;td&gt;15%&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Saturated Fat&lt;/td&gt;
+                        &lt;td&gt;7g&lt;/td&gt;
+                        &lt;td&gt;35%&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Cholesterol&lt;/td&gt;
+                        &lt;td&gt;35mg&lt;/td&gt;
+                        &lt;td&gt;12%&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Sodium&lt;/td&gt;
+                        &lt;td&gt;170mg&lt;/td&gt;
+                        &lt;td&gt;7%&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Total Carbohydrate&lt;/td&gt;
+                        &lt;td&gt;28g&lt;/td&gt;
+                        &lt;td&gt;10%&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Protein&lt;/td&gt;
+                        &lt;td&gt;3g&lt;/td&gt;
+                        &lt;td&gt;6%&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+            &lt;p&gt;&lt;small&gt;*Percent Daily Values are based on a 2000 calorie diet.&lt;/small&gt;&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Enjoy your homemade cookies! Store in airtight container for up to 1 week.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                </div>
+            </section>
+
+            <!-- Self-Assessment Quiz -->
+            <div class="test-box">
+                <h4>📝 Quick HTML Quiz</h4>
+                
+                <div class="quiz-question">
+                    <p><strong>Q1:</strong> Which HTML5 element is used for the main content of a document?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="a"> &lt;main&gt;</label>
+                        <label><input type="radio" name="q1" value="b"> &lt;body&gt;</label>
+                        <label><input type="radio" name="q1" value="c"> &lt;content&gt;</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>Q2:</strong> Which attribute is required for images for accessibility?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="a"> src</label>
+                        <label><input type="radio" name="q2" value="b"> alt</label>
+                        <label><input type="radio" name="q2" value="c"> title</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>Q3:</strong> What does the &lt;mark&gt; element do?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="a"> Creates highlighted text</label>
+                        <label><input type="radio" name="q3" value="b"> Marks important dates</label>
+                        <label><input type="radio" name="q3" value="c"> Creates bookmarks</label>
+                    </div>
+                </div>
+                
+                <button class="answer-btn" onclick="checkQuiz()">Check Answers</button>
+                <div class="answer" id="quizAnswers">
+                    <!-- Quiz answers will appear here -->
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="nav-btn prev" onclick="window.location.href='html-semantic.html'">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous: Semantic HTML
+                </button>
+                <button class="nav-btn home" onclick="window.location.href='htmlPage.html'">
+                    <i class="fas fa-home"></i>
+                    Back to HTML Tutorial
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER (same for all pages) -->
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        // Function to run HTML code in the output frame
+        function runHTMLCode() {
+            const editor = document.getElementById('htmlEditor');
+            const outputFrame = document.getElementById('outputFrame');
+            
+            try {
+                // Get the HTML code from the editor
+                const htmlCode = editor.value;
+                
+                // Write the HTML code to the iframe
+                const iframeDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+                iframeDoc.open();
+                iframeDoc.write(htmlCode);
+                iframeDoc.close();
+                
+                // Show success message
+                console.log('Code executed successfully!');
+                
+            } catch (error) {
+                console.error('Error running code:', error);
+                alert('Error running code. Please check the console for details.');
+            }
+        }
+
+        // Function to toggle exercise solutions
+        function toggleExercise(exerciseId) {
+            const answer = document.getElementById(exerciseId);
+            const button = event.target;
+            
+            if (answer.style.display === 'block' || answer.style.display === '') {
+                answer.style.display = 'none';
+                button.textContent = 'Show Solution';
+            } else {
+                answer.style.display = 'block';
+                button.textContent = 'Hide Solution';
+            }
+        }
+
+        // Function to load recipe template
+        function loadRecipeTemplate() {
+            const templateCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Challenge</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        header { text-align: center; margin-bottom: 30px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; }
+        section { margin: 25px 0; }
+        h2 { color: #2b6777; border-bottom: 2px solid #2b6777; padding-bottom: 5px; }
+        ul, ol { margin-left: 20px; }
+        li { margin: 8px 0; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #2b6777; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        footer { margin-top: 30px; text-align: center; color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chocolate Chip Cookies Recipe</h1>
+        <p>Soft, chewy, and loaded with chocolate chips - the perfect treat!</p>
+    </header>
+    
+    <main>
+        <figure>
+            <img src="https://via.placeholder.com/800x400/8B4513/FFFFFF?text=Delicious+Chocolate+Chip+Cookies" 
+                 alt="Freshly baked chocolate chip cookies on a plate">
+            <figcaption>Freshly baked chocolate chip cookies</figcaption>
+        </figure>
+        
+        <section>
+            <h2>Ingredients</h2>
+            <ul>
+                <li>2¼ cups all-purpose flour</li>
+                <li>1 teaspoon baking soda</li>
+                <li>1 teaspoon salt</li>
+                <li>1 cup butter, softened</li>
+                <li>¾ cup granulated sugar</li>
+                <li>¾ cup packed brown sugar</li>
+                <li>1 teaspoon vanilla extract</li>
+                <li>2 large eggs</li>
+                <li>2 cups semisweet chocolate chips</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Instructions</h2>
+            <ol>
+                <li>Preheat oven to 375°F (190°C)</li>
+                <li>In small bowl, mix flour, baking soda and salt; set aside</li>
+                <li>In large bowl, beat butter and sugars until creamy</li>
+                <li>Beat in vanilla and eggs until light and fluffy</li>
+                <li>Gradually beat in flour mixture</li>
+                <li>Stir in chocolate chips</li>
+                <li>Drop rounded tablespoons onto ungreased baking sheets</li>
+                <li>Bake 9 to 11 minutes or until golden brown</li>
+                <li>Cool on baking sheets for 2 minutes; remove to wire racks to cool completely</li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2>Nutrition Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nutrient</th>
+                        <th>Amount per Serving</th>
+                        <th>% Daily Value*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Calories</td>
+                        <td>220</td>
+                        <td>11%</td>
+                    </tr>
+                    <tr>
+                        <td>Total Fat</td>
+                        <td>12g</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>Saturated Fat</td>
+                        <td>7g</td>
+                        <td>35%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><small>*Percent Daily Values are based on a 2000 calorie diet.</small></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Enjoy your homemade cookies! Store in airtight container for up to 1 week.</p>
+    </footer>
+</body>
+</html>`;
+            
+            const editor = document.getElementById('htmlEditor');
+            editor.value = templateCode;
+            alert('Recipe template loaded! Try modifying it and click "Run Code".');
+            runHTMLCode();
+        }
+
+        // Function to check quiz answers
+        function checkQuiz() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a'
+            };
+            
+            let score = 0;
+            let results = '<h4>Quiz Results:</h4><ul>';
+            
+            // Check each question
+            for (let i = 1; i <= 3; i++) {
+                const questionName = 'q' + i;
+                const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+                
+                if (selected) {
+                    if (selected.value === answers[questionName]) {
+                        score++;
+                        results += `<li>Q${i}: ✓ Correct!</li>`;
+                    } else {
+                        results += `<li>Q${i}: ✗ Incorrect. Correct answer: ${getCorrectAnswerText(i)}</li>`;
+                    }
+                } else {
+                    results += `<li>Q${i}: ✗ Not answered</li>`;
+                }
+            }
+            
+            results += `</ul><p><strong>Score: ${score}/3 (${Math.round(score/3*100)}%)</strong></p>`;
+            
+            if (score === 3) {
+                results += '<p style="color:green;">🎉 Excellent! You know your HTML!</p>';
+            } else if (score >= 1) {
+                results += '<p style="color:orange;">👍 Good effort! Review the incorrect answers.</p>';
+            } else {
+                results += '<p style="color:red;">📚 Keep studying! Review the HTML tutorials.</p>';
+            }
+            
+            document.getElementById('quizAnswers').innerHTML = results;
+            document.getElementById('quizAnswers').style.display = 'block';
+        }
+
+        function getCorrectAnswerText(questionNum) {
+            const correctAnswers = {
+                1: '&lt;main&gt;',
+                2: 'alt',
+                3: 'Creates highlighted text'
+            };
+            return correctAnswers[questionNum];
+        }
+
+        // Initialize answers to be hidden by default
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.answer').forEach(answer => {
+                answer.style.display = 'none';
+            });
+            
+            // Initialize the output frame with a default message
+            const outputFrame = document.getElementById('outputFrame');
+            const iframeDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(`
+                <html>
+                <head><style>
+                    body { 
+                        font-family: Arial, sans-serif; 
+                        padding: 20px; 
+                        margin: 0;
+                        background-color: #f5f5f5;
+                        color: #666;
+                    }
+                    h3 { color: #333; }
+                </style></head>
+                <body>
+                    <h3>Output Preview</h3>
+                    <p>Click "Run Code" to see your HTML code executed here.</p>
+                    <p>Try the recipe challenge or load the template to get started!</p>
+                </body>
+                </html>
+            `);
+            iframeDoc.close();
+        });
+    </script>
+</body>
+</html>

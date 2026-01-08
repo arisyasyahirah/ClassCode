@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Introduction to SQL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html" class="active">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">SQL Introduction</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>SQL Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="sql-intro.html" class="active"><i class="fas fa-play-circle"></i> Introduction</a></li>
+                        <li><a href="sql-advanced.html"><i class="fas fa-layer-group"></i> Advanced SQL</a></li>
+                        <li><a href="sql-normalization.html"><i class="fas fa-table"></i> Normalization</a></li>
+                        <li><a href="sql-stored-procedures.html"><i class="fas fa-file-code"></i> Stored Procedures</a></li>
+                        <li><a href="sql-nosql.html"><i class="fas fa-leaf"></i> NoSQL DBMS</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="sqlPage.html"><i class="fas fa-arrow-left"></i> Back to SQL Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>What is SQL?</h1>
+                <p>SQL stands for <strong>Structured Query Language</strong>. It is the language used to communicate with databases.</p>
+                
+                
+
+                <div class="test-box" style="background-color: #e8f4fd; border-left: 5px solid #2196F3; padding: 25px; margin-bottom: 20px;">
+                    <h4><i class="fas fa-table"></i> The Students Table</h4>
+                    <p>Below is the data currently stored in our interactive database:</p>
+                    <table class="sql-table">
+                        <tr><th>ID</th><th>FirstName</th><th>Major</th></tr>
+                        <tr><td>1</td><td>Ameera</td><td>Comp Science</td></tr>
+                        <tr><td>2</td><td>Yusof</td><td>Data Science</td></tr>
+                        <tr><td>3</td><td>Arisya</td><td>Accounting</td></tr>
+                    </table>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Run Your First Query</div>
+                <p style="margin-bottom: 10px;">The editor below is <b>fully functional</b>. Try these commands:</p>
+                <ul style="font-size: 0.9em; margin-bottom: 15px;">
+                    <li><code>SELECT * FROM Students;</code> (View everything)</li>
+                    <li><code>SELECT FirstName FROM Students;</code> (View one column)</li>
+                    <li><code>SELECT * FROM Students WHERE ID = 2;</code> (Filter by ID)</li>
+                </ul>
+
+                <div class="editor-container">
+                    <textarea class="code-editor" id="sqlEditor" title="SQL code editor" rows="5" style="width: 100%; font-family: monospace; background: #2d2d2d; color: #fff; padding: 10px; border-radius: 4px;">SELECT * FROM Students;</textarea>
+                    
+                    <button class="run-btn" onclick="runSQLCode()" style="margin-top: 10px; padding: 10px 20px; cursor: pointer;">
+                        <i class="fas fa-play"></i> Run Query
+                    </button>
+                    
+                    <div class="output-container" style="margin-top: 20px;">
+                        <div class="output-title">Query Results</div>
+                        <pre id="outputConsole" style="background: #1e1e1e; color: #98FB98; padding: 15px; border-radius: 4px; overflow-x: auto;">Click 'Run Query' to see results...</pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function runSQLCode() {
+            const editor = document.getElementById('sqlEditor');
+            const outputConsole = document.getElementById('outputConsole');
+            let query = editor.value.replace(/;/g, '').trim().toUpperCase();
+            
+            // Mock Database
+            const db = [
+                { ID: 1, FIRSTNAME: "Ameera", MAJOR: "Comp Science" },
+                { ID: 2, FIRSTNAME: "Arisya", MAJOR: "Data Science" },
+                { ID: 3, FIRSTNAME: "Merrul", MAJOR: "Photography" }
+            ];
+
+            try {
+                if (!query.startsWith("SELECT")) throw new Error("Currently only SELECT commands are supported.");
+                if (!query.includes("FROM STUDENTS")) throw new Error("Table not found. Try 'FROM Students'.");
+
+                let data = [...db];
+
+                // Handle WHERE clause (simple ID check)
+                if (query.includes("WHERE")) {
+                    const parts = query.split("WHERE");
+                    const condition = parts[1].trim();
+                    if (condition.includes("ID =")) {
+                        const id = parseInt(condition.split("=")[1].trim());
+                        data = data.filter(row => row.ID === id);
+                    }
+                }
+
+                // Handle Column selection
+                let columns = ["ID", "FIRSTNAME", "MAJOR"];
+                const selectPart = query.split("FROM")[0].replace("SELECT", "").trim();
+                if (selectPart !== "*") {
+                    columns = selectPart.split(",").map(c => c.trim());
+                }
+
+                if (data.length === 0) {
+                    outputConsole.textContent = "No records found.";
+                } else {
+                    // Format output as a text table
+                    let header = columns.join(" | ");
+                    let divider = columns.map(c => "-".repeat(c.length + 2)).join("|");
+                    let rows = data.map(row => columns.map(col => row[col] || "NULL").join(" | "));
+                    
+                    outputConsole.textContent = header + "\n" + divider + "\n" + rows.join("\n");
+                }
+                outputConsole.style.color = "#98FB98";
+
+            } catch (err) {
+                outputConsole.textContent = "Error: " + err.message;
+                outputConsole.style.color = "#ff6b6b";
+            }
+        }
+        
+        window.onload = runSQLCode;
+    </script>
+</body>
+</html>

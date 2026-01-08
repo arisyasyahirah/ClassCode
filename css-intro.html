@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Introduction to CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html" class="active">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- SUBJECT TITLE -->
+    <section class="subject-header">
+        <h2>CSS Tutorial</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>CSS Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="css-intro.html" class="active"><i class="fas fa-play-circle"></i> Introduction to CSS</a></li>
+                        <li><a href="css-selectors.html"><i class="fas fa-mouse-pointer"></i> Selectors & Specificity</a></li>
+                        <li><a href="css-colors.html"><i class="fas fa-palette"></i> Colors & Backgrounds</a></li>
+                        <li><a href="css-boxmodel.html"><i class="fas fa-square"></i> The Box Model</a></li>
+                        <li><a href="css-typography.html"><i class="fas fa-font"></i> Typography & Fonts</a></li>
+                        <li><a href="css-layout.html"><i class="fas fa-th-large"></i> Flexbox & Grid</a></li>
+                        <li><a href="css-positioning.html"><i class="fas fa-arrows-alt"></i> Positioning</a></li>
+                        <li><a href="css-animations.html"><i class="fas fa-magic"></i> Transitions & Effects</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="cssPage.html"><i class="fas fa-arrow-left"></i> Back to CSS Tutorial</a></li>
+                        <li><a href="css-selectors.html"><i class="fas fa-arrow-right"></i> Next: Selectors</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>What is CSS?</h1>
+                <p><strong>Cascading Style Sheets (CSS)</strong> is the language we use to style an HTML document. While HTML provides the content (text, images, links), CSS provides the <strong>Presentation</strong> (colors, spacing, fonts, and layout).</p>
+
+                
+
+                <h2>The Three Types of CSS</h2>
+                <p>There are three ways to add CSS to your website. Understanding these is essential for efficient development:</p>
+                <ul>
+                    <li><strong>Inline CSS:</strong> Added directly to an HTML element using the <code>style</code> attribute. <br><em>(Example: &lt;h1 style="color:blue;"&gt;)</em></li>
+                    <li><strong>Internal CSS:</strong> Defined within a <code>&lt;style&gt;</code> tag inside the <code>&lt;head&gt;</code> of an HTML page.</li>
+                    <li><strong>External CSS:</strong> A separate <code>.css</code> file linked to the HTML. This is the <strong>best practice</strong> for professional websites.</li>
+                </ul>
+                
+                <h2>CSS Syntax</h2>
+                <p>CSS works by selecting an element and declaring how it should look. A CSS rule consists of a <strong>Selector</strong> and a <strong>Declaration Block</strong>.</p>
+                
+                
+
+                <div class="example-box">
+                    <h3>The Cascade Effect</h3>
+                    <p>The "C" in CSS stands for <strong>Cascading</strong>. This means that if multiple rules apply to the same element, the browser follows a specific hierarchy to decide which rule "wins." Usually, the most specific rule or the one written last takes priority.</p>
+                </div>
+            </section>
+
+            <section class="code-section">
+                <div class="code-header">
+                    <div class="code-title">CSS Syntax Example</div>
+                    <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                </div>
+                <div class="code-block">
+                    <code>/* Selector { Property: Value; } */
+h1 {
+    color: darkblue;
+    text-align: center;
+    font-family: Arial;
+}
+</code>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">CSS Live Lab - Style the Text</div>
+                <div class="style-preview">
+                    <p id="previewText">ClassCode Stylist</p>
+                </div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="cssEditor" title="CSS editor">/* Try changing the color or font-size! */
+#previewText {
+    color: #e91e63;
+    font-size: 30px;
+    letter-spacing: 2px;
+}</textarea>
+                    
+                    <button class="run-btn" onclick="runCSS()">
+                        <i class="fas fa-magic"></i>
+                        Apply Style
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Console</div>
+                        <pre id="outputConsole">Style applied successfully!</pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="test-box">
+                <h4>📝 Quick Check</h4>
+                <p><strong>Question:</strong> Which method is best for styling a website with 50 pages?</p>
+                <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+                <div class="answer" id="answer1">
+                    <strong>Answer:</strong> <strong>External CSS.</strong> By using one external <code>.css</code> file, you can change the look of all 50 pages at once just by editing that single file.
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='css-selectors.html'">
+                    Next: Selectors & Specificity
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+        <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section contact">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                </li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                </li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy;2025 ClassCode. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        function runCSS() {
+            const editor = document.getElementById('cssEditor');
+            const preview = document.getElementById('previewText');
+            const output = document.getElementById('outputConsole');
+            
+            try {
+                // Get the content of the editor
+                const cssContent = editor.value;
+                
+                // Extract properties specifically for the previewText ID
+                // This is a simplified regex for a student lab environment
+                const match = cssContent.match(/#previewText\s*{([^}]*)}/);
+                if (match && match[1]) {
+                    preview.style.cssText = match[1];
+                    output.textContent = "Styles applied to preview!";
+                    output.style.color = "white";
+                } else {
+                    throw new Error("Please use the #previewText selector in your code.");
+                }
+            } catch (err) {
+                output.textContent = "Error: " + err.message;
+                output.style.color = "#ff6b6b";
+            }
+        }
+        
+        function copyToEditor() {
+            document.getElementById('cssEditor').value = "#previewText {\n    color: darkblue;\n    font-family: serif;\n    text-decoration: underline;\n}";
+            runCSS();
+        }
+        
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            answer.classList.toggle('show');
+        }
+
+        window.onload = runCSS;
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Introduction to JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html" class="active">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2>Introduction</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>JavaScript Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="js-introduction.html" class="active"><i class="fas fa-play-circle"></i> Introduction to JS</a></li>
+                        <li><a href="js-components.html"><i class="fas fa-layer-group"></i> Dynamic Components</a></li>
+                        <li><a href="js-variables.html"><i class="fas fa-list"></i> Variables & Data</a></li>
+                        <li><a href="js-operators.html"><i class="fas fa-plus-minus"></i> Operators</a></li>
+                        <li><a href="js-dialogs.html"><i class="fas fa-window-maximize"></i> Dialog Boxes</a></li>
+                        <li><a href="js-control.html"><i class="fas fa-sync"></i> Control Flow</a></li>
+                        <li><a href="js-functions.html"><i class="fas fa-rocket"></i> Functions</a></li>
+                        <li><a href="js-dom.html"><i class="fas fa-sitemap"></i> Objects & DOM</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="jsPage.html"><i class="fas fa-arrow-left"></i> Back to JS Tutorial</a></li>
+                        <li><a href="js-components.html"><i class="fas fa-arrow-right"></i> Next: Components</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Introduction to JavaScript</h1>
+                
+                <p>JavaScript is a popular, <strong>object-based, client-side scripting language.</strong> It was originally developed by Brendan Eich at Netscape and is now the standard for creating interactive web pages.</p>
+            
+                <h2>What is JavaScript?</h2>
+                
+                <ul>
+                    <li><strong>Client-Side:</strong> It runs directly in the user's web browser, not on the server.</li>
+                    <li><strong>Interpreted:</strong> JavaScript code is interpreted "on the fly" by the browser's engine (like Chrome's V8) without needing a separate compilation step.</li>
+                    <li><strong>Case-Sensitive:</strong> Unlike HTML, JavaScript treats uppercase and lowercase letters differently (e.g., <code>myVar</code> is not <code>myvar</code>).</li>
+                    <li><strong>Interactive:</strong> It allows pages to respond to user events like clicks, mouse movements, and form submissions.</li>
+                </ul>
+                
+                <h2>The Three Layers of Web Development</h2>
+                <p>To build a modern dynamic website, you need three main components working together:</p>
+                <ul>
+                    <li><strong>HTML (Structure):</strong> The content and bones of the page.</li>
+                    <li><strong>CSS (Presentation):</strong> The style, colors, and layout.</li>
+                    <li><strong>JavaScript (Behavior):</strong> The interactivity and logic.</li>
+                </ul>
+            
+                <div class="example-box">
+                    <h3>Your First Script: Internal JavaScript</h3>
+                    <p>JavaScript is usually placed within <code>&lt;script&gt;</code> tags inside an HTML document, often just before the closing <code>&lt;/body&gt;</code> tag for better performance.</p>
+                </div>
+            </section>
+
+            <section class="code-section">
+                <div class="code-header">
+                    <div class="code-title">Example</div>
+                    <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                </div>
+                <div class="code-block">
+                    <code>&lt;script&gt;
+    // This function creates a simple alert box
+    function sayHello() {
+        alert("Welcome to ClassCode JavaScript Tutorial!");
+    }
+    sayHello();
+&lt;/script&gt;
+</code>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Edit the code</div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="jsEditor" title="JS code editor">/* Edit this code and click Run */
+let message = "JavaScript is awesome!";
+console.log(message);</textarea>
+                    
+                    <button class="run-btn" onclick="runJSCode()">
+                        <i class="fas fa-play"></i>
+                        Run Code
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Output Console</div>
+                        <pre id="outputConsole">JavaScript is awesome!</pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="test-box">
+                <h4>📝 Predict the Result</h4>
+                <p><strong>Question:</strong> Is JavaScript the same as Java?</p>
+                <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+                <div class="answer" id="answer1">
+                    <strong>Answer:</strong> <strong>No.</strong> Despite the similar names, they are completely different languages. Java is a compiled, class-based language, while JavaScript is a lightweight, interpreted scripting language designed for the web.
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='js-components.html'">
+                    Next: Dynamic Components
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function runJSCode() {
+            const editor = document.getElementById('jsEditor');
+            const outputConsole = document.getElementById('outputConsole');
+            const code = editor.value;
+
+            try {
+                // Capturing console.log output
+                let logs = [];
+                const oldLog = console.log;
+                console.log = function(msg) { logs.push(msg); };
+                
+                eval(code);
+                
+                console.log = oldLog;
+                outputConsole.textContent = logs.length > 0 ? logs.join('\n') : "Code executed successfully (no output).";
+                outputConsole.style.color = "white";
+            } catch (err) {
+                outputConsole.textContent = "Error: " + err.message;
+                outputConsole.style.color = "#ff6b6b";
+            }
+        }
+        
+        function copyToEditor() {
+            const exampleCode = `let greeting = "Hello from ClassCode!";\nconsole.log(greeting);`;
+            document.getElementById('jsEditor').value = exampleCode;
+            runJSCode();
+            document.querySelector('.test-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            answer.classList.toggle('show');
+            const button = document.querySelector(`[onclick="toggleAnswer('${answerId}')"]`);
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+
+        window.onload = runJSCode;
+    </script>
+</body>
+</html>

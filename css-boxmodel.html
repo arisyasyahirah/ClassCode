@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | CSS Box Model Master Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #main-heading { color: rgb(255, 255, 255); }
+        
+        /* Box Model Interactive Visualizer */
+        .box-visualizer {
+            background: #fdfdfd;
+            border: 2px dashed #ccc;
+            padding: 40px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 250px;
+        }
+
+        .margin-box {
+            background-color: #f9cb9c; /* Margin Color */
+            padding: 20px; /* This acts as the margin for the internal box */
+            transition: all 0.3s ease;
+        }
+
+        .border-box {
+            background-color: #ffe599; /* Border Color */
+            padding: 5px; /* Represents the border thickness */
+        }
+
+        .padding-box {
+            background-color: #b6d7a8; /* Padding Color */
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .content-box {
+            background-color: #a4c2f4; /* Content Color */
+            width: 120px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1155cc;
+            border: 1px solid #1155cc;
+        }
+
+        .legend {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+            font-size: 0.85em;
+        }
+        .legend-item { display: flex; align-items: center; gap: 5px; }
+        .dot { width: 12px; height: 12px; border-radius: 2px; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html" class="active">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">The Box Model</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>CSS Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="css-intro.html"><i class="fas fa-play-circle"></i> Introduction</a></li>
+                        <li><a href="css-selectors.html"><i class="fas fa-mouse-pointer"></i> Selectors</a></li>
+                        <li><a href="css-colors.html"><i class="fas fa-palette"></i> Colors</a></li>
+                        <li><a href="css-boxmodel.html" class="active"><i class="fas fa-square"></i> The Box Model</a></li>
+                        <li><a href="css-typography.html"><i class="fas fa-font"></i> Typography</a></li>
+                        <li><a href="css-layout.html"><i class="fas fa-th-large"></i> Flexbox & Grid</a></li>
+                        <li><a href="css-positioning.html"><i class="fas fa-arrows-alt"></i> Positioning</a></li>
+                        <li><a href="css-animations.html"><i class="fas fa-magic"></i> Animations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>The Anatomy of an Element</h1>
+                <p>In CSS, the term <strong>"Box Model"</strong> is used when talking about design and layout. It consists of: margins, borders, padding, and the actual content.</p>
+
+                
+
+                <h2>1. Components Breakdown</h2>
+                <ul>
+                    <li><strong>Content:</strong> The text or images inside the box.</li>
+                    <li><strong>Padding:</strong> Transparent area <i>around</i> the content (inside the border). It creates breathing room for text.</li>
+                    <li><strong>Border:</strong> A line that goes around the padding and content.</li>
+                    <li><strong>Margin:</strong> Transparent area <i>outside</i> the border. It creates space between this element and its neighbors.</li>
+                </ul>
+
+                <h2>2. Total Width Calculation</h2>
+                <p>One of the biggest traps for students is calculating the total width. By default, the total width is:</p>
+                <div class="test-box" style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 15px; font-family: monospace; text-align: center;">
+                    Total Width = width + left padding + right padding + left border + right border + left margin + right margin
+                </div>
+
+                <div class="test-box" style="background-color: #e8f5e9; border-left: 5px solid #4caf50; padding: 20px; margin-top: 20px;">
+                    <h4><i class="fas fa-tools"></i> Pro-Tip: Box-Sizing</h4>
+                    <p>Tired of doing math? Use <code>box-sizing: border-box;</code>. This tells the browser to include padding and borders in the element's total width and height. This makes layout much easier!</p>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Box Model Visualizer</div>
+                <p>Adjust the padding and margin in the code below to see how the "Box Layers" expand or contract.</p>
+                
+                <div class="box-visualizer">
+                    <div class="margin-box" id="vMargin">
+                        <div class="border-box" id="vBorder">
+                            <div class="padding-box" id="vPadding">
+                                <div class="content-box">CONTENT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="legend">
+                    <div class="legend-item"><div class="dot" style="background: #f9cb9c;"></div> Margin</div>
+                    <div class="legend-item"><div class="dot" style="background: #ffe599;"></div> Border</div>
+                    <div class="legend-item"><div class="dot" style="background: #b6d7a8;"></div> Padding</div>
+                    <div class="legend-item"><div class="dot" style="background: #a4c2f4;"></div> Content</div>
+                </div>
+
+                <div class="editor-container" style="margin-top: 25px;">
+                    <textarea class="code-editor" id="cssEditor" title="CSS editor" rows="10">/* Adjust the values below */
+.box {
+    margin: 20px;
+    padding: 30px;
+    border-width: 5px;
+    width: 150px;
+}</textarea>
+                    
+                    <button class="run-btn" onclick="updateBox()">
+                        <i class="fas fa-expand-arrows-alt"></i> Update Box
+                    </button>
+                    
+                    <div class="output-container" style="margin-top: 20px;">
+                        <div class="output-title">Dimension Log</div>
+                        <pre id="outputConsole">Adjust the CSS and see the layers change.</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Study Tips for the Exam</h2>
+                <div class="test-box" style="background-color: #fff4e5; border-left: 5px solid #ff9800; padding: 20px;">
+                    <ul>
+                        <li><strong>Short-hand logic:</strong> Remember the clock! <code>margin: 10px 20px 30px 40px;</code> is (Top, Right, Bottom, Left).</li>
+                        <li><strong>Margin Collapse:</strong> Be aware that top and bottom margins of blocks sometimes combine (collapse) into a single margin.</li>
+                        <li><strong>Auto Margin:</strong> Using <code>margin: 0 auto;</code> is the classic way to center a block element horizontally inside its parent.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='css-typography.html'">
+                    Next: Typography & Fonts
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section contact">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                </li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                </li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy;2025 ClassCode. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        function updateBox() {
+            const editor = document.getElementById('cssEditor');
+            const vMargin = document.getElementById('vMargin');
+            const vPadding = document.getElementById('vPadding');
+            const output = document.getElementById('outputConsole');
+            const css = editor.value;
+
+            try {
+                const mMatch = css.match(/margin:\s*(\d+)px/);
+                const pMatch = css.match(/padding:\s*(\d+)px/);
+                
+                if (mMatch) vMargin.style.padding = mMatch[1] + "px";
+                if (pMatch) vPadding.style.padding = pMatch[1] + "px";
+                
+                output.textContent = "Visualizer Updated! \nNote: In this demo, Margin is simulated by the outer orange space.";
+                output.style.color = "#98FB98";
+            } catch (err) {
+                output.textContent = "Error parsing CSS values.";
+            }
+        }
+        window.onload = updateBox;
+    </script>
+</body>
+</html>

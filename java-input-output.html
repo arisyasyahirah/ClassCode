@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Java Input & Output</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html" class="active">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2>Java Input/Output</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Java Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="java-intro.html"><i class="fas fa-play-circle"></i> Introduction to Java</a></li>
+                        <li><a href="java-input-output.html" class="active"><i class="fas fa-font"></i> Input Output</a></li>
+                        <li><a href="java-variables.html"><i class="fas fa-list"></i> Variables</a></li>
+                        <li><a href="java-operators.html"><i class="fas fa-link"></i> Operators</a></li>
+                        <li><a href="java-selection.html"><i class="fas fa-edit"></i> Selection</a></li>
+                        <li><a href="java-looping.html"><i class="fas fa-redo"></i> Looping</a></li>
+                        <li><a href="java-array.html"><i class="fas fa-sitemap"></i> Array</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="javaPage.html"><i class="fas fa-arrow-left"></i> Back to Java Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Java Input and Output</h1>
+                
+                <p>In Java, <strong>Output</strong> is used to show information to the user, while <strong>Input</strong> is used to get information from the user via the keyboard.</p>
+
+                
+
+                <h2>1. Java Output</h2>
+                <p>The most common method to output data is <code>System.out.println()</code>, which prints text to the console and starts a new line.</p>
+                
+                <ul>
+                    <li><code>print()</code> - Prints text on the same line.</li>
+                    <li><code>println()</code> - Prints text and moves to the next line.</li>
+                </ul>
+
+                <h2>2. Java Input (Scanner)</h2>
+                <p>To get user input, we use the <code>Scanner</code> class from the <code>java.util</code> package.</p>
+                
+                <div class="example-box">
+                    <h3>How to use Scanner:</h3>
+                    <ol>
+                        <li>Import the class: <code>import java.util.Scanner;</code></li>
+                        <li>Create an object: <code>Scanner sc = new Scanner(System.in);</code></li>
+                        <li>Read input: <code>sc.nextLine();</code> (for Strings) or <code>sc.nextInt();</code> (for integers).</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Simulate Input</div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="javaEditor" title="Java code editor">import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Since we can't type in a real console here,
+        // change the 'mockInput' value to simulate a user typing!
+        String mockInput = "Alex"; 
+        
+        System.out.println("Enter username: " + mockInput);
+        System.out.println("Hello, " + mockInput + "!");
+    }
+}</textarea>
+                    
+                    <button class="run-btn" onclick="runJavaCode()">
+                        <i class="fas fa-play"></i>
+                        Run Code
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Output</div>
+                        <pre id="outputConsole"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="test-box">
+                <h4>📝 Predict the Result</h4>
+                <p><strong>Question:</strong> Which method would you use to read a single word (no spaces) from the user?</p>
+                <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+                <div class="answer" id="answer1">
+                    <strong>Answer:</strong> <code>sc.next()</code>. While <code>nextLine()</code> reads a whole line, <code>next()</code> only reads until the first space is found.
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='java-variables.html'">
+                    Next: Variables
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function runJavaCode() {
+            const editor = document.getElementById('javaEditor');
+            const outputConsole = document.getElementById('outputConsole');
+            const code = editor.value;
+            let output = [];
+
+            try {
+                // Regex to find the simulated input variable
+                const inputMatch = code.match(/String\s+mockInput\s*=\s*["']([^"']*)["']\s*;/);
+                
+                if (inputMatch) {
+                    const userInput = inputMatch[1];
+                    output.push("Enter username: " + userInput);
+                    output.push("Hello, " + userInput + "!");
+                } else {
+                    output.push("Simulation Error: Please keep the 'mockInput' variable to simulate a keyboard.");
+                }
+            } catch (e) {
+                output.push("Syntax Error in code simulation.");
+            }
+
+            outputConsole.textContent = output.join('\n');
+        }
+        
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            answer.classList.toggle('show');
+            const button = document.querySelector(`[onclick="toggleAnswer('${answerId}')"]`);
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+        
+        window.onload = runJavaCode;
+    </script>
+</body>
+</html>

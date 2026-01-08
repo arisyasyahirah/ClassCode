@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | HTML Forms</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .demo-input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html" class="active">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- SUBJECT TITLE -->
+    <section class="subject-header">
+        <h2>HTML Forms (HTML5)</h2>
+    </section>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>HTML5 Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="html-intro.html"><i class="fas fa-play-circle"></i> Introduction to HTML5</a></li>
+                        <li><a href="html-structure.html"><i class="fas fa-code"></i> Structure & Syntax</a></li>
+                        <li><a href="html-text.html"><i class="fas fa-font"></i> Text & Inline Elements</a></li>
+                        <li><a href="html-lists.html"><i class="fas fa-list"></i> Lists</a></li>
+                        <li><a href="html-links.html"><i class="fas fa-link"></i> Links & Images</a></li>
+                        <li><a href="html-forms.html" class="active"><i class="fas fa-edit"></i> Forms (HTML5)</a></li>
+                        <li><a href="html-multimedia.html"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                        <li><a href="html-semantic.html"><i class="fas fa-sitemap"></i> Semantic HTML</a></li>
+                        <li><a href="html-exercises.html"><i class="fas fa-puzzle-piece"></i> Examples & Exercises</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="htmlPage.html"><i class="fas fa-arrow-left"></i> Back to HTML Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+                <section class="content-section">
+                    <h1>HTML5 Forms: Interactive User Input</h1>
+                    
+                    <p>HTML forms are essential for collecting user input. HTML5 introduced new input types, attributes, and elements that make forms more powerful and user-friendly.</p>
+                
+                    <h2>Form Element (<code>&lt;form&gt;</code>)</h2>
+                    
+                    <h3>Basic Form Structure</h3>
+                    <div class="example-box">
+                        <p>The <code>&lt;form&gt;</code> element creates a container for form controls that can be submitted to a server.</p>
+                        <div class="example-output">
+                            <h4>Example:</h4>
+                            <form style="background:#f9f9f9; padding:15px; border-radius:5px;">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name">
+                                <br><br>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                        <pre>&lt;form action="/submit-form" method="POST"&gt;
+        &lt;!-- Form controls go here --&gt;
+    &lt;/form&gt;</pre>
+                    </div>
+                    
+                    <h3>Form Attributes</h3>
+                    <div class="example-box">
+                        <table class="element-table">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Values</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>action</code></td>
+                                    <td>URL</td>
+                                    <td>Where to send form data</td>
+                                </tr>
+                                <tr>
+                                    <td><code>method</code></td>
+                                    <td>GET, POST</td>
+                                    <td>HTTP method for submission</td>
+                                </tr>
+                                <tr>
+                                    <td><code>target</code></td>
+                                    <td>_blank, _self</td>
+                                    <td>Where to display response</td>
+                                </tr>
+                                <tr>
+                                    <td><code>autocomplete</code></td>
+                                    <td>on, off</td>
+                                    <td>Enable/disable autocomplete</td>
+                                </tr>
+                                <tr>
+                                    <td><code>novalidate</code></td>
+                                    <td>Boolean</td>
+                                    <td>Disable validation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h2>Input Element (<code>&lt;input&gt;</code>)</h2>
+                    
+                    <h3>Common Input Types</h3>
+                    <div class="example-box">
+                        <table class="element-table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>text</code></td>
+                                    <td>Single-line text input</td>
+                                    <td><input type="text" placeholder="Enter text" class="demo-input" title="Example text input"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>password</code></td>
+                                    <td>Masked text input</td>
+                                    <td><input type="password" placeholder="Password" class="demo-input" title="Example password input"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>email</code></td>
+                                    <td>Email address with validation</td>
+                                    <td><input type="email" placeholder="email@example.com" class="demo-input" title="Example email input"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>number</code></td>
+                                    <td>Numeric input with arrows</td>
+                                    <td><input type="number" placeholder="123" class="demo-input" title="Example number input"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tel</code></td>
+                                    <td>Telephone number</td>
+                                    <td><input type="tel" placeholder="+60 12-345 6789" class="demo-input" title="Example telephone input"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>url</code></td>
+                                    <td>URL input with validation</td>
+                                    <td><input type="url" placeholder="https://example.com" class="demo-input" title="Example URL input"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>date</code></td>
+                                    <td>Date picker</td>
+                                    <td><input type="date" class="demo-input" title="Example date picker"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>time</code></td>
+                                    <td>Time picker</td>
+                                    <td><input type="time" class="demo-input" title="Example time picker"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>color</code></td>
+                                    <td>Color picker</td>
+                                    <td><input type="color" class="demo-input" title="Example color picker"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>range</code></td>
+                                    <td>Slider control</td>
+                                    <td><input type="range" min="0" max="100" class="demo-input" title="Example range slider"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>file</code></td>
+                                    <td>File upload</td>
+                                    <td><input type="file" class="demo-input" title="Example file upload"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>checkbox</code></td>
+                                    <td>Multiple selection</td>
+                                    <td><input type="checkbox" title="Example checkbox"> Option</td>
+                                </tr>
+                                <tr>
+                                    <td><code>radio</code></td>
+                                    <td>Single selection</td>
+                                    <td><input type="radio" name="radio" title="Example radio button"> Choice</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>HTML5 Input Attributes</h3>
+                    <div class="example-box">
+                        <table class="element-table">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>placeholder</code></td>
+                                    <td>Hint text inside input</td>
+                                    <td><input type="text" placeholder="Enter your name" class="demo-input" title="Placeholder example"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>required</code></td>
+                                    <td>Makes field mandatory</td>
+                                    <td><input type="text" required class="demo-input" placeholder="Required field" title="Required example"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>autofocus</code></td>
+                                    <td>Auto-focus on page load</td>
+                                    <td><input type="text" placeholder="Auto-focused" class="demo-input" title="Autofocus example"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>pattern</code></td>
+                                    <td>Regex validation pattern</td>
+                                    <td><input type="text" pattern="[A-Za-z]{3}" placeholder="3 letters" class="demo-input" title="Pattern example"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>min/max</code></td>
+                                    <td>Minimum/maximum values</td>
+                                    <td><input type="number" min="1" max="100" class="demo-input" placeholder="1-100" title="Min/max example"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>step</code></td>
+                                    <td>Increment step for numbers</td>
+                                    <td><input type="number" step="0.5" class="demo-input" placeholder="0.5 step" title="Step example"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>multiple</code></td>
+                                    <td>Allow multiple values</td>
+                                    <td><input type="file" multiple class="demo-input" title="Multiple files example"></td>
+                                </tr>
+                                <tr>
+                                    <td><code>list</code></td>
+                                    <td>Associates with datalist</td>
+                                    <td><input list="browsers" placeholder="Choose browser" class="demo-input" title="Datalist example"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h2>Other Form Elements</h2>
+                    
+                    <h3>Textarea (<code>&lt;textarea&gt;</code>)</h3>
+                    <div class="example-box">
+                        <p>For multi-line text input:</p>
+                        <div class="example-output">
+                            <textarea rows="3" cols="40" placeholder="Enter your message here..." class="demo-input" title="Example textarea"></textarea>
+                        </div>
+                        <pre>&lt;textarea rows="4" cols="50" placeholder="Enter text..."&gt;
+    Default text here
+    &lt;/textarea&gt;</pre>
+                    </div>
+                    
+                    <h3>Select & Option (<code>&lt;select&gt;</code> & <code>&lt;option&gt;</code>)</h3>
+                    <div class="example-box">
+                        <p>For dropdown selection:</p>
+                        <div class="example-output">
+                            <select class="demo-input" title="Example select dropdown">
+                                <option value="">Select an option</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                        </div>
+                        <pre>&lt;select name="country"&gt;
+        &lt;option value=""&gt;Select country&lt;/option&gt;
+        &lt;option value="MY"&gt;Malaysia&lt;/option&gt;
+        &lt;option value="SG"&gt;Singapore&lt;/option&gt;
+        &lt;option value="ID"&gt;Indonesia&lt;/option&gt;
+    &lt;/select&gt;</pre>
+                    </div>
+                    
+                    <h3>Datalist (<code>&lt;datalist&gt;</code>)</h3>
+                    <div class="example-box">
+                        <p>Provides autocomplete suggestions:</p>
+                        <pre>&lt;input list="browsers" name="browser" placeholder="Choose browser"&gt;
+    &lt;datalist id="browsers"&gt;
+        &lt;option value="Chrome"&gt;
+        &lt;option value="Firefox"&gt;
+        &lt;option value="Safari"&gt;
+        &lt;option value="Edge"&gt;
+    &lt;/datalist&gt;</pre>
+                    </div>
+                    
+                    <h3>Fieldset & Legend</h3>
+                    <div class="example-box">
+                        <p>Groups related form elements:</p>
+                        <pre>&lt;fieldset&gt;
+        &lt;legend&gt;Personal Information&lt;/legend&gt;
+        &lt;!-- Form fields here --&gt;
+    &lt;/fieldset&gt;</pre>
+                    </div>
+                    
+                    <h2>Label Element (<code>&lt;label&gt;</code>)</h2>
+                    <div class="example-box">
+                        <p>Associates text with form controls for accessibility:</p>
+                        <div class="example-output">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" class="demo-input">
+                        </div>
+                        <pre>&lt;!-- Method 1: Using for attribute --&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username"&gt;
+
+    &lt;!-- Method 2: Wrapping the input --&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" name="subscribe"&gt;
+        Subscribe to newsletter
+    &lt;/label&gt;</pre>
+                    </div>
+                    
+                    <h2>Buttons</h2>
+                    <div class="example-box">
+                        <table class="element-table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;button type="submit"&gt;</code></td>
+                                    <td>Submits the form</td>
+                                    <td><button type="submit" title="Submit button">Submit</button></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;button type="reset"&gt;</code></td>
+                                    <td>Resets form fields</td>
+                                    <td><button type="reset" title="Reset button">Reset</button></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;button type="button"&gt;</code></td>
+                                    <td>General purpose button</td>
+                                    <td><button type="button" title="Click button">Click Me</button></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;input type="submit"&gt;</code></td>
+                                    <td>Submit button (old style)</td>
+                                    <td><input type="submit" value="Submit" title="Submit button"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h2>Form Validation</h2>
+                    
+                    <h3>Client-Side Validation</h3>
+                    <div class="example-box">
+                        <p>HTML5 provides built-in validation:</p>
+                        <pre>&lt;input type="email" required placeholder="Valid email required"&gt;
+    &lt;input type="text" pattern="[A-Za-z]{3,}" title="At least 3 letters"&gt;
+    &lt;input type="number" min="18" max="100"&gt;
+    &lt;input type="url" required&gt;</pre>
+                    </div>
+                    
+                    <h3>Validation Attributes</h3>
+                    <div class="example-box">
+                        <ul>
+                            <li><code>required</code>: Field must be filled</li>
+                            <li><code>minlength</code>/<code>maxlength</code>: Text length limits</li>
+                            <li><code>min</code>/<code>max</code>: Numeric value limits</li>
+                            <li><code>pattern</code>: Regular expression pattern</li>
+                            <li><code>title</code>: Tooltip for validation message</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>Best Practices</h2>
+                    <div class="example-box">
+                        <ul>
+                            <li>Always use <code>&lt;label&gt;</code> elements for accessibility</li>
+                            <li>Use appropriate input types (email, tel, etc.)</li>
+                            <li>Provide helpful placeholder text</li>
+                            <li>Use <code>required</code> attribute for mandatory fields</li>
+                            <li>Group related fields with <code>&lt;fieldset&gt;</code></li>
+                            <li>Use client-side validation but validate on server too</li>
+                            <li>Make forms keyboard accessible (tab order)</li>
+                            <li>Provide clear error messages</li>
+                            <li>Consider mobile users with appropriate input types</li>
+                            <li>Test forms thoroughly across browsers</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Code Example Section -->
+                <section class="code-section">
+                    <div class="code-header">
+                        <div class="code-title">Complete Form Example</div>
+                        <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                    </div>
+                    <div class="code-block">
+                        <code>&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Registration Form&lt;/title&gt;
+        &lt;style&gt;
+            body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+            .form-container { background: #f9f9f9; padding: 30px; border-radius: 8px; }
+            .form-group { margin-bottom: 20px; }
+            label { display: block; margin-bottom: 5px; font-weight: bold; }
+            input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+            input:focus, select:focus, textarea:focus { outline: none; border-color: #2b6777; }
+            .btn { background: #2b6777; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+            .btn:hover { background: #1e4e5a; }
+            .error { color: #d32f2f; font-size: 14px; }
+            fieldset { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; }
+            legend { font-weight: bold; padding: 0 10px; }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Registration Form&lt;/h1&gt;
+        
+        &lt;form class="form-container" action="#" method="POST" novalidate&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;Personal Information&lt;/legend&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="fullName"&gt;Full Name *&lt;/label&gt;
+                    &lt;input type="text" id="fullName" name="fullName" 
+                           placeholder="Enter your full name" required&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="email"&gt;Email Address *&lt;/label&gt;
+                    &lt;input type="email" id="email" name="email" 
+                           placeholder="example@domain.com" required&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="phone"&gt;Phone Number&lt;/label&gt;
+                    &lt;input type="tel" id="phone" name="phone" 
+                           placeholder="+60 12-345 6789" pattern="[+][0-9\s\-]+"&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="dob"&gt;Date of Birth&lt;/label&gt;
+                    &lt;input type="date" id="dob" name="dob" max="2005-12-31"&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+            
+            &lt;fieldset&gt;
+                &lt;legend&gt;Account Details&lt;/legend&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="username"&gt;Username *&lt;/label&gt;
+                    &lt;input type="text" id="username" name="username" 
+                           placeholder="Choose a username" required minlength="3"&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="password"&gt;Password *&lt;/label&gt;
+                    &lt;input type="password" id="password" name="password" 
+                           placeholder="At least 8 characters" required minlength="8"&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="confirmPassword"&gt;Confirm Password *&lt;/label&gt;
+                    &lt;input type="password" id="confirmPassword" name="confirmPassword" 
+                           placeholder="Re-enter your password" required&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+            
+            &lt;fieldset&gt;
+                &lt;legend&gt;Additional Information&lt;/legend&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="country"&gt;Country&lt;/label&gt;
+                    &lt;select id="country" name="country"&gt;
+                        &lt;option value=""&gt;Select country&lt;/option&gt;
+                        &lt;option value="MY"&gt;Malaysia&lt;/option&gt;
+                        &lt;option value="SG"&gt;Singapore&lt;/option&gt;
+                        &lt;option value="ID"&gt;Indonesia&lt;/option&gt;
+                        &lt;option value="TH"&gt;Thailand&lt;/option&gt;
+                        &lt;option value="PH"&gt;Philippines&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="browser"&gt;Favorite Browser&lt;/label&gt;
+                    &lt;input list="browsers" id="browser" name="browser" placeholder="Type or select"&gt;
+                    &lt;datalist id="browsers"&gt;
+                        &lt;option value="Google Chrome"&gt;
+                        &lt;option value="Mozilla Firefox"&gt;
+                        &lt;option value="Safari"&gt;
+                        &lt;option value="Microsoft Edge"&gt;
+                        &lt;option value="Opera"&gt;
+                    &lt;/datalist&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="experience"&gt;Years of Experience&lt;/label&gt;
+                    &lt;input type="range" id="experience" name="experience" min="0" max="20" value="5"&gt;
+                    &lt;span id="experienceValue"&gt;5 years&lt;/span&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;Preferred Colors&lt;/label&gt;&lt;br&gt;
+                    &lt;label&gt;&lt;input type="checkbox" name="colors" value="red"&gt; Red&lt;/label&gt;
+                    &lt;label&gt;&lt;input type="checkbox" name="colors" value="blue"&gt; Blue&lt;/label&gt;
+                    &lt;label&gt;&lt;input type="checkbox" name="colors" value="green"&gt; Green&lt;/label&gt;
+                    &lt;label&gt;&lt;input type="checkbox" name="colors" value="yellow"&gt; Yellow&lt;/label&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;Newsletter&lt;/label&gt;&lt;br&gt;
+                    &lt;label&gt;&lt;input type="radio" name="newsletter" value="daily" checked&gt; Daily&lt;/label&gt;
+                    &lt;label&gt;&lt;input type="radio" name="newsletter" value="weekly"&gt; Weekly&lt;/label&gt;
+                    &lt;label&gt;&lt;input type="radio" name="newsletter" value="monthly"&gt; Monthly&lt;/label&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="form-group"&gt;
+                    &lt;label for="comments"&gt;Additional Comments&lt;/label&gt;
+                    &lt;textarea id="comments" name="comments" rows="4" 
+                              placeholder="Any additional information..."&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+            
+            &lt;div class="form-group"&gt;
+                &lt;label&gt;
+                    &lt;input type="checkbox" name="terms" required&gt;
+                    I agree to the Terms and Conditions *
+                &lt;/label&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="form-group"&gt;
+                &lt;button type="submit" class="btn"&gt;Register&lt;/button&gt;
+                &lt;button type="reset" class="btn" style="background: #666; margin-left: 10px;"&gt;Reset Form&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+        
+        &lt;script&gt;
+            // Update range value display
+            const experienceRange = document.getElementById('experience');
+            const experienceValue = document.getElementById('experienceValue');
+            
+            experienceRange.addEventListener('input', function() {
+                experienceValue.textContent = this.value + ' years';
+            });
+            
+            // Form validation feedback
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    alert('Please fill in all required fields correctly.');
+                }
+            });
+        &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code>
+                    </div>
+                </section>
+
+                <!-- Live Test Section -->
+                <section class="test-section">
+                    <div class="test-header">Try it Yourself - Edit the code</div>
+                    <div class="editor-container">
+                        <textarea class="code-editor" id="htmlEditor" title="HTML code editor">&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Practice Forms&lt;/title&gt;
+        &lt;style&gt;
+            body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; }
+            .form-task { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px; }
+            label { display: block; margin: 10px 0 5px; }
+            input, select, textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
+            button { padding: 10px 20px; background: #2b6777; color: white; border: none; cursor: pointer; }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Practice HTML Forms&lt;/h1&gt;
+        
+        &lt;div class="form-task"&gt;
+            &lt;h2&gt;Task 1: Create a contact form&lt;/h2&gt;
+            &lt;form&gt;
+                &lt;!-- Create name, email, message fields here --&gt;
+                &lt;!-- Add a submit button --&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-task"&gt;
+            &lt;h2&gt;Task 2: Create a survey with different input types&lt;/h2&gt;
+            &lt;form&gt;
+                &lt;!-- Create various input types here --&gt;
+                &lt;!-- Include: text, email, number, date, checkbox, radio --&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="form-task"&gt;
+            &lt;h2&gt;Task 3: Create a registration form with validation&lt;/h2&gt;
+            &lt;form&gt;
+                &lt;!-- Create form with required fields and validation --&gt;
+                &lt;!-- Include: required, pattern, minlength attributes --&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</textarea>
+                        
+                        <button class="run-btn" onclick="runHTMLCode()">
+                            <i class="fas fa-play"></i>
+                            Run Code
+                        </button>
+                        
+                        <div class="output-container">
+                            <div class="output-title">Output</div>
+                            <iframe id="outputFrame" title="HTML Code Output"></iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Test Box -->
+                <div class="test-box">
+                    <h4>📝 Forms Challenge</h4>
+                    <p><strong>Challenge 1:</strong> Create an email input field with validation and required attribute.</p>
+                    <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Solution</button>
+                    <div class="answer" id="answer1">
+                        <strong>Solution:</strong><br>
+                        <code>&lt;div&gt;<br>
+    &nbsp;&nbsp;&lt;label for="userEmail"&gt;Email Address:&lt;/label&gt;<br>
+    &nbsp;&nbsp;&lt;input type="email" id="userEmail" name="email"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="your.email@example.com"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"&gt;<br>
+    &lt;/div&gt;</code>
+                    </div>
+                    
+                    <p><strong>Challenge 2:</strong> Create a password field with minimum length requirement.</p>
+                    <button class="answer-btn" onclick="toggleAnswer('answer2')">Show Solution</button>
+                    <div class="answer" id="answer2">
+                        <strong>Solution:</strong><br>
+                        <code>&lt;div&gt;<br>
+    &nbsp;&nbsp;&lt;label for="userPassword"&gt;Password:&lt;/label&gt;<br>
+    &nbsp;&nbsp;&lt;input type="password" id="userPassword" name="password"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="At least 8 characters"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required minlength="8"&gt;<br>
+    &lt;/div&gt;</code>
+                    </div>
+                    
+                    <p><strong>Challenge 3:</strong> Create a form with a range slider that displays its value.</p>
+                    <button class="answer-btn" onclick="toggleAnswer('answer3')">Show Solution</button>
+                    <div class="answer" id="answer3">
+                        <strong>Solution:</strong><br>
+                        <code>&lt;div&gt;<br>
+    &nbsp;&nbsp;&lt;label for="volume"&gt;Volume: &lt;span id="volumeValue"&gt;50&lt;/span&gt;&lt;/label&gt;<br>
+    &nbsp;&nbsp;&lt;input type="range" id="volume" name="volume"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min="0" max="100" value="50"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oninput="document.getElementById('volumeValue').textContent = this.value"&gt;<br>
+    &lt;/div&gt;</code>
+                    </div>
+                    
+                    <p><strong>Challenge 4:</strong> Create a form with a datalist for autocomplete suggestions.</p>
+                    <button class="answer-btn" onclick="toggleAnswer('answer4')">Show Solution</button>
+                    <div class="answer" id="answer4">
+                        <strong>Solution:</strong><br>
+                        <code>&lt;div&gt;<br>
+    &nbsp;&nbsp;&lt;label for="browser"&gt;Choose your browser:&lt;/label&gt;<br>
+    &nbsp;&nbsp;&lt;input list="browsers" id="browser" name="browser"&gt;<br>
+    &nbsp;&nbsp;&lt;datalist id="browsers"&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="Chrome"&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="Firefox"&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="Safari"&gt;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="Edge"&gt;<br>
+    &nbsp;&nbsp;&lt;/datalist&gt;<br>
+    &lt;/div&gt;</code>
+                    </div>
+                </div>
+
+                
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="nav-btn prev" onclick="window.location.href='html-links.html'">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous: Links & Images
+                </button>
+                <button class="nav-btn next" onclick="window.location.href='html-multimedia.html'">
+                    Next: Multimedia
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER (same for all pages) -->
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        // JavaScript for each page
+        function runHTMLCode() {
+            const editor = document.getElementById('htmlEditor');
+            const outputFrame = document.getElementById('outputFrame');
+            if (editor && outputFrame) {
+                const code = editor.value;
+                const iframeDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+                iframeDoc.open();
+                iframeDoc.write(code);
+                iframeDoc.close();
+            }
+        }
+        
+        function copyToEditor() {
+            const exampleCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        form { max-width: 500px; }
+        label { display: block; margin: 10px 0 5px; }
+        input, textarea { width: 100%; padding: 8px; margin-bottom: 15px; }
+        button { padding: 10px 20px; background: #2b6777; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit">Send Message</button>
+    </form>
+</body>
+</html>`;
+            
+            const editor = document.getElementById('htmlEditor');
+            if (editor) {
+                editor.value = exampleCode;
+                runHTMLCode();
+            }
+        }
+        
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer) answer.classList.toggle('show');
+        }
+        
+        window.onload = function() {
+            runHTMLCode();
+        };
+    </script>
+</body>
+</html>

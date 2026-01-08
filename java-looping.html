@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Java Looping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html" class="active">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2>Java Looping</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Java Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="java-intro.html"><i class="fas fa-play-circle"></i> Introduction to Java</a></li>
+                        <li><a href="java-input-output.html"><i class="fas fa-font"></i> Input Output</a></li>
+                        <li><a href="java-variables.html"><i class="fas fa-list"></i> Variables</a></li>
+                        <li><a href="java-operators.html"><i class="fas fa-link"></i> Operators</a></li>
+                        <li><a href="java-selection.html"><i class="fas fa-edit"></i> Selection</a></li>
+                        <li><a href="java-looping.html" class="active"><i class="fas fa-redo"></i> Looping</a></li>
+                        <li><a href="java-array.html"><i class="fas fa-sitemap"></i> Array</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="javaPage.html"><i class="fas fa-arrow-left"></i> Back to Java Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Java Loops</h1>
+                
+                <p>Loops are used to execute a block of code repeatedly as long as a specified condition is met. They are handy because they save time, reduce errors, and make code more readable.</p>
+            
+            <div class="content-section">
+            <h2>Loop Logic Flowchart</h2>\
+            <p>Understanding how the computer decides to repeat code is easier with a visual flow:</p>
+    
+            <img src="Java Loop.webp" alt="Java For and While Loop Flowchart" class="responsive-img">
+            </div>
+
+
+                <h2>Types of Java Loops</h2>
+                
+                <ul>
+                    <li><strong>For Loop:</strong> Used when you know exactly how many times you want to loop through a block of code.</li>
+                    <li><strong>While Loop:</strong> Loops through a block of code as long as a specified condition is <code>true</code>.</li>
+                    <li><strong>Do/While Loop:</strong> Similar to the while loop, but it will execute the code block once before checking the condition.</li>
+                </ul>
+                
+                <div class="example-box">
+                    <h3>The For Loop Syntax</h3>
+                    <p>The syntax consists of three parts: initialization, condition, and increment/decrement.</p>
+                </div>
+            </section>
+
+            <section class="code-section">
+                <div class="code-header">
+                    <div class="code-title">Example: Counting to 5</div>
+                    <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                </div>
+                <div class="code-block">
+                    <code id="codeSample">for (int i = 1; i <= 5; i++) {
+    System.out.println("Iteration: " + i);
+}</code>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Edit the code</div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="javaEditor" title="Java code editor">public class Main {
+    public static void main(String[] args) {
+        // Change the 5 to a 3 and see what happens!
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Number: " + i);
+        }
+    }
+}</textarea>
+                    
+                    <button class="run-btn" onclick="runJavaCode()">
+                        <i class="fas fa-play"></i>
+                        Run Code
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Output</div>
+                        <pre id="outputConsole"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="test-box">
+                <h4>📝 Predict the Result</h4>
+                <p><strong>Question:</strong> How many times will this loop run?</p>
+                <pre>int x = 0;
+while (x < 3) {
+    System.out.println(x);
+    x++;
+}</pre>
+                <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+                <div class="answer" id="answer1">
+                    <strong>Answer:</strong> 3 times. It will print 0, 1, and 2. When <code>x</code> becomes 3, the condition <code>x < 3</code> becomes false.
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='java-array.html'">
+                    Next: Array
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        // Enhanced simulation to handle Loop Logic
+        function runJavaCode() {
+            const editor = document.getElementById('javaEditor');
+            const outputConsole = document.getElementById('outputConsole');
+            const code = editor.value;
+            let output = [];
+
+            try {
+                // Regex to find: for (int i = [start]; i <= [end]; i++)
+                const forLoopRegex = /for\s*\(\s*int\s+i\s*=\s*(\d+)\s*;\s*i\s*<=\s*(\d+)\s*;\s*i\+\+\s*\)/;
+                const match = code.match(forLoopRegex);
+
+                // Regex to find what's inside System.out.println
+                // Specifically looking for: System.out.println("Text: " + i);
+                const printRegex = /System\.out\.println\s*\(\s*["']([^"']*)["']\s*\+\s*i\s*\);/;
+                const printMatch = code.match(printRegex);
+
+                if (match && printMatch) {
+                    const start = parseInt(match[1]);
+                    const end = parseInt(match[2]);
+                    const text = printMatch[1];
+
+                    if (end > 100) {
+                        output.push("Error: Loop limit too high for simulation.");
+                    } else {
+                        for (let i = start; i <= end; i++) {
+                            output.push(text + i);
+                        }
+                    }
+                } else {
+                    output.push("Simulation limited: Please use the standard 'for' loop format provided.");
+                }
+            } catch (e) {
+                output.push("Syntax Error in simulation logic.");
+            }
+
+            outputConsole.textContent = output.join('\n');
+        }
+        
+        function copyToEditor() {
+            const exampleCode = `public class Main {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Iteration: " + i);
+        }
+    }
+}`;
+            document.getElementById('javaEditor').value = exampleCode;
+            runJavaCode();
+            document.querySelector('.test-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            answer.classList.toggle('show');
+            const button = document.querySelector(`[onclick="toggleAnswer('${answerId}')"]`);
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Show Answer';
+        }
+        
+        window.onload = runJavaCode;
+    </script>
+</body>
+</html>

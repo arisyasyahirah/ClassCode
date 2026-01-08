@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | CSS Typography Master Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #main-heading { color: rgb(255, 255, 255); }
+        
+        .type-preview-box {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 40px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table th { background-color: #f8f9fa; font-weight: bold; }
+
+        .tip-ribbon {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html" class="active">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">Advanced Typography & Web Fonts</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>CSS Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="css-intro.html"><i class="fas fa-play-circle"></i> Introduction</a></li>
+                        <li><a href="css-selectors.html"><i class="fas fa-mouse-pointer"></i> Selectors</a></li>
+                        <li><a href="css-colors.html"><i class="fas fa-palette"></i> Colors</a></li>
+                        <li><a href="css-boxmodel.html"><i class="fas fa-square"></i> The Box Model</a></li>
+                        <li><a href="css-typography.html" class="active"><i class="fas fa-font"></i> Typography</a></li>
+                        <li><a href="css-layout.html"><i class="fas fa-th-large"></i> Flexbox & Grid</a></li>
+                        <li><a href="css-positioning.html"><i class="fas fa-arrows-alt"></i> Positioning</a></li>
+                        <li><a href="css-animations.html"><i class="fas fa-magic"></i> Animations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Beyond Just "Choosing a Font"</h1>
+                <p>Typography accounts for over 90% of web design. It is the primary way we communicate information to users. Mastering text properties ensures your site is readable, accessible, and professional.</p>
+
+                <h2>1. Understanding Font Families</h2>
+                <p>Browsers use a "Fallback" system. If the first font isn't available, it moves to the next one.</p>
+                
+                
+                <table class="comparison-table">
+                    <tr>
+                        <th>Category</th>
+                        <th>Characteristics</th>
+                        <th>Best For...</th>
+                    </tr>
+                    <tr>
+                        <td><b>Serif</b></td>
+                        <td>Small "feet" (serifs) on characters.</td>
+                        <td>Traditional, elegant, print-like feel.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Sans-Serif</b></td>
+                        <td>Clean, straight edges. No feet.</td>
+                        <td>Modern look, high digital readability.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Monospace</b></td>
+                        <td>Every character has the same width.</td>
+                        <td>Code snippets and technical data.</td>
+                    </tr>
+                </table>
+
+                <h2>2. Sizing Units (Exam Focus)</h2>
+                <p>Choosing the right unit is critical for <b>Responsive Design</b>:</p>
+                <ul>
+                    <li><strong>PX (Pixels):</strong> Absolute unit. Fixed size that doesn't change.</li>
+                    <li><strong>EM:</strong> Relative to the font-size of its direct parent.</li>
+                    <li><strong>REM (Root EM):</strong> Relative to the <code>&lt;html&gt;</code> tag font-size. <b>Highly recommended</b> for accessibility.</li>
+                </ul>
+                
+
+                <div class="tip-ribbon">
+                    <h4><i class="fas fa-lightbulb"></i> Study Tip: Line-Height</h4>
+                    <p>Always set a <code>line-height</code> between 1.5 and 1.8 for body text. This prevents "line crowding" and makes long paragraphs much easier for the human brain to process.</p>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">The Hierarchy Lab</div>
+                <p>Good design uses <b>Contrast</b>. Adjust the sizes below to make the heading stand out from the body text.</p>
+                
+                <div class="type-preview-box" id="previewArea">
+                    <h1 id="pHeader">Mastering CSS</h1>
+                    <p id="pBody">Typography is not just about choosing a font. It's about spacing, sizing, and creating a clear path for the reader's eyes to follow. When you change the <code>letter-spacing</code>, notice how the "breathability" of the text changes.</p>
+                </div>
+
+                <div class="editor-container">
+                    <textarea class="code-editor" id="cssEditor" title="CSS editor" rows="14">/* 1. Style the Heading (The Hook) */
+#pHeader {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: #222;
+}
+
+/* 2. Style the Body (The Content) */
+#pBody {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 600px;
+}</textarea>
+                    
+                    <button class="run-btn" onclick="applyTextStyles()">
+                        <i class="fas fa-pen-nib"></i> Update Visuals
+                    </button>
+                    
+                    <div class="output-container" style="margin-top: 20px;">
+                        <div class="output-title">Typography Console</div>
+                        <pre id="outputConsole">Try using 'rem' units instead of 'px'!</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Pro Student Study Strategy</h2>
+                <div class="test-box" style="background-color: #e3f2fd; border-left: 5px solid #2196f3; padding: 25px;">
+                    <p><strong>How to pass your CSS Exam:</strong></p>
+                    <ul>
+                        <li><b>Contrast:</b> If someone squinted at your site, could they tell the difference between a title and a paragraph? If not, increase the <code>font-weight</code> or <code>font-size</code>.</li>
+                        <li><b>The 60-75 Rule:</b> The most readable lines of text are 60 to 75 characters wide. Use <code>max-width</code> on your text containers!</li>
+                        <li><b>Web Safe Fonts:</b> Remember that Arial, Times New Roman, and Verdana are "Web Safe" because almost every computer has them installed.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='css-layout.html'">
+                    Next: Flexbox & Grid
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function applyTextStyles() {
+            const editor = document.getElementById('cssEditor');
+            const header = document.getElementById('pHeader');
+            const body = document.getElementById('pBody');
+            const output = document.getElementById('outputConsole');
+            const css = editor.value;
+
+            try {
+                // Regex to split styles between the two IDs
+                const hMatch = css.match(/#pHeader\s*{([^}]*)}/);
+                const bMatch = css.match(/#pBody\s*{([^}]*)}/);
+                
+                if (hMatch) header.style.cssText = hMatch[1];
+                if (bMatch) body.style.cssText = bMatch[1];
+                
+                output.textContent = "Styles Applied! Check the hierarchy above.";
+                output.style.color = "#98FB98";
+            } catch (err) {
+                output.textContent = "Syntax Error: Check your brackets!";
+                output.style.color = "#ff6b6b";
+            }
+        }
+        window.onload = applyTextStyles;
+    </script>
+</body>
+</html>

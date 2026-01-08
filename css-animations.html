@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Professional CSS Animation Engineering</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- BRANDING & CORE DESIGN --- */
+        :root {
+            --primary-blue: #2c3e50;
+            --accent-green: #2ecc71;
+            --panic-red: #e74c3c;
+            --code-bg: #1e1e1e;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; }
+        #main-heading { color: black; font-size: 2.8rem; margin-bottom: 10px; border-bottom: 3px solid var(--accent-green); display: inline-block; }
+        
+        /* --- PAGE LAYOUT --- */
+        .page-container { display: flex; gap: 40px; padding: 30px; max-width: 1600px; margin: auto; }
+        .main-content { flex: 3; }
+        .sidebar { flex: 1; min-width: 300px; }
+
+        /* --- THE DYNAMIC MITOSIS ANT SYSTEM --- */
+        .ant-entity {
+            position: fixed;
+            z-index: 9999;
+            cursor: pointer;
+            transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
+            -webkit-user-select: none;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ant-body {
+            font-size: 35px;
+            color: #3e2723;
+            display: inline-block;
+            transition: color 0.3s, transform 0.5s;
+        }
+
+        .ant-label {
+            font-size: 10px;
+            font-weight: bold;
+            background: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 5px;
+        }
+
+        /* Animation States */
+        .is-dead {
+            transform: rotate(720deg) scale(0) !important;
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+
+        /* --- STUDY CARDS & ENCYCLOPEDIA --- */
+        .mastery-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .tip-card {
+            background: #fff9db;
+            border-left: 6px solid #fcc419;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* --- INTERACTIVE LAB --- */
+        .animation-stage {
+            height: 450px;
+            background: radial-gradient(circle, #2c3e50 0%, #000000 100%);
+            border-radius: 20px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1200px;
+        }
+
+        #animatedBox {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(135deg, #00dbde 0%, #fc00ff 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+        }
+
+        /* --- CODE EDITOR --- */
+        .editor-wrapper {
+            background: var(--code-bg);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .code-editor {
+            width: 100%;
+            height: 300px;
+            background: transparent;
+            color: #9cdcfe;
+            border: none;
+            font-family: 'Consolas', monospace;
+            font-size: 14px;
+            resize: none;
+            outline: none;
+        }
+
+        .run-btn {
+            background: var(--accent-green);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* --- TECHNICAL TABLES --- */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        .tech-table th, .tech-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ant-world"></div>
+
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html" class="active">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-section">
+                <h3>Animation Engineering</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#physics">Bezier Physics</a></li>
+                    <li><a href="#keyboard">Global Events</a></li>
+                </ul>
+            </div>
+
+            <div class="tip-card">
+                <h4><i class="fas fa-keyboard"></i> Hotkey Alert!</h4>
+                <p>Press <strong>ENTER</strong> to clear all ants from the screen instantly.</p>
+            </div>
+
+            <div class="mastery-section" style="background: #e7f5ff;">
+                <h4><i class="fas fa-info-circle"></i> Vector Logic</h4>
+                <p>The ants calculate the angle of rotation using the arctangent function:</p>
+                <code>atan2(y2-y1, x2-x1)</code>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section id="intro" class="content-section">
+                <h2 id="main-heading">Advanced Motion States</h2>
+                <p>In this module, we explore how JavaScript can manipulate CSS properties in real-time to create complex simulations like our interactive ant environment.</p>
+                
+                
+
+                <h3>State Management Properties</h3>
+                <table class="tech-table">
+                    <tr><th>Property</th><th>Description</th><th>Use Case</th></tr>
+                    <tr><td><code>transform</code></td><td>GPU-accelerated movement</td><td>Positioning Ants</td></tr>
+                    <tr><td><code>transition</code></td><td>Interpolation between states</td><td>Smooth scurrying</td></tr>
+                    <tr><td><code>opacity</code></td><td>Alpha transparency</td><td>Death fade-out</td></tr>
+                </table>
+
+                <h2 id="physics">Physical Simulation Lab</h2>
+                <div class="animation-stage" id="stage">
+                    <div id="animatedBox">STUDENT BOX</div>
+                </div>
+
+                <div class="editor-wrapper">
+                    <textarea class="code-editor" id="cssEditor" placeholder="Enter your CSS animation code here">
+@keyframes drift {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); background: #4facfe; }
+    100% { transform: scale(1) rotate(360deg); }
+}
+#animatedBox {
+    animation: drift 3s infinite linear;
+}</textarea>
+                    <button class="run-btn" onclick="runCode()">EXECUTE CSS</button>
+                </div>
+            </section>
+
+            <section id="keyboard" class="content-section" style="margin-top: 50px;">
+                <h2>Global Cleanup Logic</h2>
+                <p>Modern UIs often use global "listeners" to handle broad commands. By listening for the <strong>Enter</strong> key, we can trigger a batch operation across all active DOM elements.</p>
+                
+                
+
+                <div class="tip-card">
+                    <h4>Why use transform?</h4>
+                    <p>Animating <code>top</code> and <code>left</code> causes the browser to "reflow" the layout. Using <code>transform: translate()</code> tells the computer to use the Graphics Card (GPU), making it much faster.</p>
+                </div>
+                
+                <h3>Course Progress</h3>
+                <p>You have now completed the CSS Motion section. You are ready to move on to JavaScript logic where we will learn how to build the "Ant Engine" from scratch.</p>
+            </section>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 50px;">
+                <a href="#" class="run-btn" style="width: 200px; text-decoration: none; text-align: center; background: #6c757d;">Previous</a>
+                <a href="jsPage.html" class="run-btn" style="width: 200px; text-decoration: none; text-align: center;">Start JavaScript</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section contact">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                </li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                </li>
+                <li><i class="fas fa-envelope"></i> 
+                    <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy;2025 ClassCode. All rights reserved.</p>
+    </div>
+</footer>
+
+    <style id="runtimeStyles"></style>
+
+    <script>
+        const world = document.getElementById('ant-world');
+        let count = 0;
+
+        // --- THE ANT ENGINE ---
+        function createAnt(x, y, isClone = false) {
+            count++;
+            const ant = document.createElement('div');
+            ant.className = 'ant-entity';
+            ant.style.left = x + 'px';
+            ant.style.top = y + 'px';
+            ant.dataset.state = "walking";
+            
+            ant.innerHTML = `
+                <div class="ant-body"><i class="fas fa-bug"></i></div>
+                <div class="ant-label">${isClone ? 'CLONE' : 'ANT'}</div>
+            `;
+
+            ant.onclick = (e) => {
+                e.stopPropagation();
+                handleInteraction(ant);
+            };
+
+            world.appendChild(ant);
+            startLife(ant);
+        }
+
+        function handleInteraction(ant) {
+            if (ant.dataset.state === "walking") {
+                // START PANIC & MITOSIS
+                ant.dataset.state = "running";
+                ant.querySelector('.ant-label').textContent = "RUN!";
+                ant.querySelector('.ant-body').style.color = "var(--panic-red)";
+                
+                // Spawn the second one
+                const rect = ant.getBoundingClientRect();
+                createAnt(rect.left + 50, rect.top, true);
+                
+                // Speed up movement
+                setInterval(() => {
+                    if (ant.dataset.state === "running") moveRandomly(ant);
+                }, 800);
+            } else if (ant.dataset.state === "running") {
+                killAnt(ant);
+            }
+        }
+
+        function killAnt(ant) {
+            ant.classList.add('is-dead');
+            ant.dataset.state = "dead";
+            setTimeout(() => ant.remove(), 1000);
+        }
+
+        // --- KEYBOARD LISTENER ---
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") {
+                const ants = document.querySelectorAll('.ant-entity');
+                ants.forEach(a => killAnt(a));
+            }
+        });
+
+        // --- MOVEMENT ---
+        function moveRandomly(ant) {
+            const maxX = window.innerWidth - 100;
+            const maxY = window.innerHeight - 100;
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+            
+            const rect = ant.getBoundingClientRect();
+            const angle = Math.atan2(newY - rect.top, newX - rect.left) * (180 / Math.PI);
+            
+            ant.style.left = newX + 'px';
+            ant.style.top = newY + 'px';
+            ant.querySelector('.ant-body').style.transform = `rotate(${angle + 90}deg)`;
+        }
+
+        function startLife(ant) {
+            setInterval(() => {
+                if (ant.dataset.state === "walking") moveRandomly(ant);
+            }, 3000);
+        }
+
+        function runCode() {
+            document.getElementById('runtimeStyles').innerHTML = document.getElementById('cssEditor').value;
+        }
+
+        window.onload = () => {
+            createAnt(100, window.innerHeight - 150);
+            runCode();
+        };
+    </script>
+</body>
+</html>

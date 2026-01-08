@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | HTML Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html" class="active">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- SUBJECT TITLE -->
+    <section class="subject-header">
+        <h2>HTML Tutorial</h2>
+    </section>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>HTML5 Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="html-intro.html"><i class="fas fa-play-circle"></i> Introduction to HTML5</a></li>
+                        <li><a href="html-structure.html"><i class="fas fa-code"></i> Structure & Syntax</a></li>
+                        <li><a href="html-text.html"><i class="fas fa-font"></i> Text & Inline Elements</a></li>
+                        <li><a href="html-lists.html"><i class="fas fa-list"></i> Lists</a></li>
+                        <li><a href="html-links.html"><i class="fas fa-link"></i> Links & Images</a></li>
+                        <li><a href="html-forms.html"><i class="fas fa-edit"></i> Forms (HTML5)</a></li>
+                        <li><a href="html-multimedia.html"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                        <li><a href="html-semantic.html"><i class="fas fa-sitemap"></i> Semantic HTML</a></li>
+                        <li><a href="html-exercises.html"><i class="fas fa-puzzle-piece"></i> Examples & Exercises</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="htmlPage.html"><i class="fas fa-arrow-left"></i> Back to HTML Tutorial</a></li>
+                        <li><a href="html-intro.html"><i class="fas fa-arrow-left"></i> Previous: Introduction</a></li>
+                        <li><a href="html-text.html"><i class="fas fa-arrow-right"></i> Next: Text Elements</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Welcome to HTML Tutorial</h1>
+                <p>Select a topic from the sidebar to start learning HTML5. Each lesson contains:</p>
+                <ul>
+                    <li>Clear explanations with examples</li>
+                    <li>Interactive code editors to practice</li>
+                    <li>Exercises to test your knowledge</li>
+                    <li>Downloadable resources</li>
+                </ul>
+                
+                <div class="language-grid" style="margin-top: 30px;">
+                    <a href="html-intro.html" class="language-card">
+                        <h3><i class="fas fa-play-circle"></i> Introduction</h3>
+                        <p>Start with HTML5 basics and fundamentals</p>
+                    </a>
+                    <a href="html-structure.html" class="language-card">
+                        <h3><i class="fas fa-code"></i> Structure & Syntax</h3>
+                        <p>Learn proper HTML document structure</p>
+                    </a>
+                    <a href="html-text.html" class="language-card">
+                        <h3><i class="fas fa-font"></i> Text Elements</h3>
+                        <p>Format text with headings and inline elements</p>
+                    </a>
+                    <a href="html-lists.html" class="language-card">
+                        <h3><i class="fas fa-list"></i> Lists</h3>
+                        <p>Create ordered, unordered and description lists</p>
+                    </a>
+                    <a href="html-links.html" class="language-card">
+                        <h3><i class="fas fa-link"></i> Links & Images</h3>
+                        <p>Add hyperlinks and images to your pages</p>
+                    </a>
+                    <a href="html-forms.html" class="language-card">
+                        <h3><i class="fas fa-edit"></i> Forms</h3>
+                        <p>Create interactive forms with HTML5 inputs</p>
+                    </a>
+                    <a href="html-multimedia.html" class="language-card">
+                        <h3><i class="fas fa-photo-video"></i> Multimedia</h3>
+                        <p>Add audio, video and canvas elements</p>
+                    </a>
+                    <a href="html-semantic.html" class="language-card">
+                        <h3><i class="fas fa-sitemap"></i> Semantic HTML</h3>
+                        <p>Use semantic tags for better accessibility</p>
+                    </a>
+                    <a href="html-exercises.html" class="language-card">
+                        <h3><i class="fas fa-puzzle-piece"></i> Exercises</h3>
+                        <p>Practice with interactive coding challenges</p>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>Why Learn HTML?</h2>
+                <p>HTML (HyperText Markup Language) is the foundation of all web development. It's essential for:</p>
+                <ul>
+                    <li>Building websites and web applications</li>
+                    <li>Creating structured content for the web</li>
+                    <li>Understanding how browsers display content</li>
+                    <li>Working with CSS and JavaScript</li>
+                    <li>Improving website accessibility and SEO</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>

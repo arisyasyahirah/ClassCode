@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | JavaScript Operators Study Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #main-heading {
+            color: rgb(249, 249, 249);
+        }
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .concept-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html" class="active">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">JavaScript Operators Master Guide</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>JavaScript Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="js-introduction.html"><i class="fas fa-play-circle"></i> Introduction</a></li>
+                        <li><a href="js-components.html"><i class="fas fa-layer-group"></i> Components</a></li>
+                        <li><a href="js-variables.html"><i class="fas fa-list"></i> Variables & Data</a></li>
+                        <li><a href="js-operators.html" class="active"><i class="fas fa-plus-minus"></i> Operators</a></li>
+                        <li><a href="js-dialogs.html"><i class="fas fa-window-maximize"></i> Dialog Boxes</a></li>
+                        <li><a href="js-control.html"><i class="fas fa-sync"></i> Control Flow</a></li>
+                        <li><a href="js-functions.html"><i class="fas fa-rocket"></i> Functions</a></li>
+                        <li><a href="js-dom.html"><i class="fas fa-sitemap"></i> Objects & DOM</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>The Logic of JavaScript</h1>
+                <p>Operators allow us to manipulate data, perform math, and make decisions in our code. They are divided into several key categories every developer must master.</p>
+                
+                
+
+                <div class="concept-grid">
+                    <div class="test-box" style="background-color: #e8f4fd; border-left: 5px solid #2196F3; padding: 20px;">
+                        <h4><i class="fas fa-calculator"></i> 1. Arithmetic Operators</h4>
+                        <ul>
+                            <li><strong>% (Modulus):</strong> Returns the remainder (e.g., <code>10 % 3 = 1</code>). Great for finding even/odd numbers.</li>
+                            <li><strong>++ / -- :</strong> Increment or Decrement a value by 1.</li>
+                            <li><strong>** (Exponentiation):</strong> ES6 power operator (e.g., <code>5 ** 2 = 25</code>).</li>
+                        </ul>
+                    </div>
+
+                    <div class="test-box" style="background-color: #f9f9f9; border-left: 5px solid #4CAF50; padding: 20px;">
+                        <h4><i class="fas fa-check-double"></i> 2. Comparison Operators</h4>
+                        <ul>
+                            <li><strong>== vs === :</strong> <code>==</code> checks value only; <code>===</code> checks value AND data type (Strict Equality).</li>
+                            <li><strong>!= vs !== :</strong> Not equal and Strict not equal.</li>
+                            <li><strong>>= / <= :</strong> Greater than or equal / Less than or equal.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="test-box" style="background-color: #fff4e5; border-left: 5px solid #ff9800; padding: 20px; margin-bottom: 20px;">
+                    <h4><i class="fas fa-brain"></i> 3. Logical Operators (Decision Making)</h4>
+                    <p>Used to combine multiple boolean conditions:</p>
+                    <ul>
+                        <li><strong>&& (AND):</strong> True only if BOTH sides are true.</li>
+                        <li><strong>|| (OR):</strong> True if at least ONE side is true.</li>
+                        <li><strong>! (NOT):</strong> Reverses the result (True becomes False).</li>
+                    </ul>
+                </div>
+
+                <div class="test-box" style="background-color: #f3e5f5; border-left: 5px solid #9c27b0; padding: 20px;">
+                    <h4><i class="fas fa-sort-amount-down"></i> 4. Operator Precedence (PEMDAS)</h4>
+                    <p>Just like math, JavaScript follows an order: <strong>Parentheses ()</strong> first, then <strong>Multiplication/Division</strong>, then <strong>Addition/Subtraction</strong>.</p>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Advanced Operators Lab</div>
+                <p style="margin-bottom: 10px;">Review the code below. We are checking if a student is eligible for a discount based on age AND membership status.</p>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="jsEditor" title="JS code editor" rows="12" style="width: 100%; font-family: monospace;">// 1. Setup Variables
+let age = 20;
+let hasMemberCard = true;
+let ticketPrice = 50;
+
+// 2. Logical Check: Is user a minor OR a member?
+let eligibleForDiscount = (age < 18) || (hasMemberCard === true);
+
+// 3. Calculation using Assignment Operators
+if (eligibleForDiscount) {
+    ticketPrice -= 10; // Same as ticketPrice = ticketPrice - 10
+}
+
+// 4. Detailed Logs
+console.log("Customer Age:", age);
+console.log("Discount Eligible?", eligibleForDiscount);
+console.log("Final Ticket Price: RM" + ticketPrice);
+console.log("Comparison Check (20 == '20'):", 20 == '20');
+console.log("Strict Check (20 === '20'):", 20 === '20');</textarea>
+                    
+                    <button class="run-btn" onclick="runJSCode()" style="margin-top: 10px; padding: 10px 20px; cursor: pointer;">
+                        <i class="fas fa-play"></i> Run Code
+                    </button>
+                    
+                    <div class="output-container" style="margin-top: 20px;">
+                        <div class="output-title">Output Console</div>
+                        <pre id="outputConsole" style="background: #1e1e1e; color: #98FB98; padding: 15px; border-radius: 4px; overflow-x: auto;">Output will appear here...</pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+    <script>
+        function runJSCode() {
+            const editor = document.getElementById('jsEditor');
+            const outputConsole = document.getElementById('outputConsole');
+            const code = editor.value;
+
+            try {
+                let logs = [];
+                const originalLog = console.log;
+                console.log = function(...args) {
+                    logs.push(args.join(' '));
+                };
+
+                eval(code);
+
+                console.log = originalLog;
+                outputConsole.textContent = logs.length > 0 ? logs.join('\n') : "Code executed successfully!";
+                outputConsole.style.color = "#98FB98"; 
+            } catch (err) {
+                outputConsole.textContent = "Error: " + err.message;
+                outputConsole.style.color = "#ff6b6b"; 
+            }
+        }
+        window.onload = runJSCode;
+    </script>
+</body>
+</html>

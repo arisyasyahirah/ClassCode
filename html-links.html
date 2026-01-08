@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | HTML Links & Images</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html" class="active">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- SUBJECT TITLE -->
+    <section class="subject-header">
+        <h2>HTML Links & Images</h2>
+    </section>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>HTML5 Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="html-intro.html"><i class="fas fa-play-circle"></i> Introduction to HTML5</a></li>
+                        <li><a href="html-structure.html"><i class="fas fa-code"></i> Structure & Syntax</a></li>
+                        <li><a href="html-text.html"><i class="fas fa-font"></i> Text & Inline Elements</a></li>
+                        <li><a href="html-lists.html"><i class="fas fa-list"></i> Lists</a></li>
+                        <li><a href="html-links.html" class="active"><i class="fas fa-link"></i> Links & Images</a></li>
+                        <li><a href="html-forms.html"><i class="fas fa-edit"></i> Forms (HTML5)</a></li>
+                        <li><a href="html-multimedia.html"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                        <li><a href="html-semantic.html"><i class="fas fa-sitemap"></i> Semantic HTML</a></li>
+                        <li><a href="html-exercises.html"><i class="fas fa-puzzle-piece"></i> Examples & Exercises</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="htmlPage.html"><i class="fas fa-arrow-left"></i> Back to HTML Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+                <section class="content-section">
+                    <h1>HTML Links & Images: Connecting and Visualizing Content</h1>
+                    
+                    <p>Links and images are fundamental elements of web pages. Links create connections between pages and resources, while images add visual appeal and information.</p>
+                
+                    <h2>Anchor Element (<code>&lt;a&gt;</code>)</h2>
+                    
+                    <h3>Basic Link Syntax</h3>
+                    <div class="example-box">
+                        <p>The <code>&lt;a&gt;</code> (anchor) element creates hyperlinks to other web pages, files, email addresses, or locations on the same page.</p>
+                        <div class="example-output">
+                            <h4>Example:</h4>
+                            <p>Visit our <a href=" " target="_blank">homepage</a> for more information.</p>
+                        </div>
+                        <pre>&lt;a href="https://www.example.com" target="_blank"&gt;Visit Example.com&lt;/a&gt;</pre>
+                    </div>
+                    
+                    <h3>Link Attributes</h3>
+                    <div class="example-box">
+                        <table class="element-table">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Values</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>href</code></td>
+                                    <td>URL</td>
+                                    <td>Specifies the link destination</td>
+                                </tr>
+                                <tr>
+                                    <td><code>target</code></td>
+                                    <td>_blank, _self, _parent, _top</td>
+                                    <td>Where to open the linked document</td>
+                                </tr>
+                                <tr>
+                                    <td><code>rel</code></td>
+                                    <td>nofollow, noopener, noreferrer</td>
+                                    <td>Relationship between documents</td>
+                                </tr>
+                                <tr>
+                                    <td><code>download</code></td>
+                                    <td>filename</td>
+                                    <td>Downloads the file when clicked</td>
+                                </tr>
+                                <tr>
+                                    <td><code>title</code></td>
+                                    <td>text</td>
+                                    <td>Extra information about the link</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>Types of Links</h3>
+                    <div class="example-box">
+                        <pre>&lt;!-- External link --&gt;
+&lt;a href="https://www.google.com" target="_blank" rel="noopener"&gt;Google&lt;/a&gt;
+
+&lt;!-- Internal link --&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+
+&lt;!-- Email link --&gt;
+&lt;a href="mailto:contact@example.com"&gt;Email Us&lt;/a&gt;
+
+&lt;!-- Phone link --&gt;
+&lt;a href="tel:+60123456789"&gt;Call Us&lt;/a&gt;
+
+&lt;!-- Download link --&gt;
+&lt;a href="document.pdf" download="my-document.pdf"&gt;Download PDF&lt;/a&gt;
+
+&lt;!-- Anchor link --&gt;
+&lt;a href="#section2"&gt;Jump to Section 2&lt;/a&gt;</pre>
+                    </div>
+                    
+                    <h2>Image Element (<code>&lt;img&gt;</code>)</h2>
+                    
+                    <h3>Basic Image Syntax</h3>
+                    <div class="example-box">
+                        <p>The <code>&lt;img&gt;</code> element embeds images in web pages. It's a self-closing tag.</p>
+                        <div class="example-output">
+                            <h4>Example:</h4>
+                            <img src="https://via.placeholder.com/300x150" alt="Sample placeholder image" style="max-width:100%; border:1px solid #ddd;">
+                        </div>
+                        <pre>&lt;img src="image.jpg" alt="Description of image" width="300" height="200"&gt;</pre>
+                    </div>
+                    
+                    <h3>Image Attributes</h3>
+                    <div class="example-box">
+                        <table class="element-table">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Values</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>src</code></td>
+                                    <td>URL</td>
+                                    <td>Source file path</td>
+                                </tr>
+                                <tr>
+                                    <td><code>alt</code></td>
+                                    <td>text</td>
+                                    <td>Alternative text (required for accessibility)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>width</code>/<code>height</code></td>
+                                    <td>pixels</td>
+                                    <td>Image dimensions</td>
+                                </tr>
+                                <tr>
+                                    <td><code>title</code></td>
+                                    <td>text</td>
+                                    <td>Tooltip text</td>
+                                </tr>
+                                <tr>
+                                    <td><code>loading</code></td>
+                                    <td>lazy/eager</td>
+                                    <td>Lazy loading behavior</td>
+                                </tr>
+                                <tr>
+                                    <td><code>srcset</code></td>
+                                    <td>URL + width descriptor</td>
+                                    <td>Responsive images for different screens</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h2>Figure and Figcaption</h2>
+                    <div class="example-box">
+                        <p>Use <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> for semantically marked up images with captions.</p>
+                        <pre>&lt;figure&gt;
+        &lt;img src="landscape.jpg" alt="Beautiful mountain landscape"&gt;
+        &lt;figcaption&gt;Fig. 1 - A beautiful mountain landscape at sunrise&lt;/figcaption&gt;
+    &lt;/figure&gt;</pre>
+                    </div>
+                    
+                    <h2>Image Formats and Optimization</h2>
+                    
+                    <h3>Common Image Formats</h3>
+                    <div class="example-box">
+                        <table class="element-table">
+                            <thead>
+                                <tr>
+                                    <th>Format</th>
+                                    <th>Best For</th>
+                                    <th>File Extension</th>
+                                    <th>Compression</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>JPEG</td>
+                                    <td>Photographs, complex images</td>
+                                    <td>.jpg, .jpeg</td>
+                                    <td>Lossy</td>
+                                </tr>
+                                <tr>
+                                    <td>PNG</td>
+                                    <td>Graphics, logos, transparency</td>
+                                    <td>.png</td>
+                                    <td>Lossless</td>
+                                </tr>
+                                <tr>
+                                    <td>GIF</td>
+                                    <td>Simple animations, small graphics</td>
+                                    <td>.gif</td>
+                                    <td>Lossless</td>
+                                </tr>
+                                <tr>
+                                    <td>SVG</td>
+                                    <td>Vector graphics, icons</td>
+                                    <td>.svg</td>
+                                    <td>Vector (scalable)</td>
+                                </tr>
+                                <tr>
+                                    <td>WebP</td>
+                                    <td>Modern web (better compression)</td>
+                                    <td>.webp</td>
+                                    <td>Both lossy/lossless</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h2>Responsive Images</h2>
+                    
+                    <h3>Using srcset and sizes</h3>
+                    <div class="example-box">
+                        <p>Provide different image files for different screen sizes:</p>
+                        <pre>&lt;img src="image-small.jpg"
+         srcset="image-small.jpg 300w,
+                 image-medium.jpg 600w,
+                 image-large.jpg 1200w"
+         sizes="(max-width: 600px) 300px,
+                (max-width: 1200px) 600px,
+                1200px"
+         alt="Responsive image example"&gt;</pre>
+                    </div>
+                    
+                    <h3>Picture Element</h3>
+                    <div class="example-box">
+                        <p>Use <code>&lt;picture&gt;</code> for art direction and format support:</p>
+                        <pre>&lt;picture&gt;
+        &lt;source media="(min-width: 768px)" srcset="large.jpg"&gt;
+        &lt;source media="(min-width: 480px)" srcset="medium.jpg"&gt;
+        &lt;img src="small.jpg" alt="Responsive art direction"&gt;
+    &lt;/picture&gt;</pre>
+                    </div>
+                    
+                    <h2>Image Links and Image Maps</h2>
+                    
+                    <h3>Image as a Link</h3>
+                    <div class="example-box">
+                        <pre>&lt;a href="gallery.html"&gt;
+        &lt;img src="thumbnail.jpg" alt="View gallery"&gt;
+    &lt;/a&gt;</pre>
+                    </div>
+                    
+                    <h3>Image Maps</h3>
+                    <div class="example-box">
+                        <p>Create clickable areas on an image:</p>
+                        <pre>&lt;img src="workplace.jpg" alt="Workplace" usemap="#workmap"&gt;
+
+    &lt;map name="workmap"&gt;
+        &lt;area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.html"&gt;
+        &lt;area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.html"&gt;
+        &lt;area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.html"&gt;
+    &lt;/map&gt;</pre>
+                    </div>
+                    
+                    <h2>Best Practices</h2>
+                    <div class="example-box">
+                        <ul>
+                            <li>Always include descriptive <code>alt</code> text for images</li>
+                            <li>Use appropriate image formats and compress images</li>
+                            <li>Specify width and height attributes to prevent layout shifts</li>
+                            <li>Use <code>rel="noopener"</code> for external links opening in new tabs</li>
+                            <li>Make link text descriptive (avoid "click here")</li>
+                            <li>Implement responsive images for different screen sizes</li>
+                            <li>Use lazy loading for images below the fold</li>
+                            <li>Keep file names descriptive and SEO-friendly</li>
+                            <li>Optimize image delivery with CDNs</li>
+                            <li>Consider using modern formats like WebP</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Code Example Section -->
+                <section class="code-section">
+                    <div class="code-header">
+                        <div class="code-title">Complete Links & Images Example</div>
+                        <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                    </div>
+                    <div class="code-block">
+                        <code>&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Links & Images Showcase&lt;/title&gt;
+        &lt;style&gt;
+            body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+            .example-box { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+            img { max-width: 100%; height: auto; }
+            .link-demo { margin: 10px 0; }
+            figure { margin: 0; }
+            figcaption { font-style: italic; color: #666; margin-top: 5px; }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;HTML Links & Images Showcase&lt;/h1&gt;
+        
+        &lt;div class="example-box"&gt;
+            &lt;h2&gt;Navigation Links&lt;/h2&gt;
+            &lt;nav class="link-demo"&gt;
+                &lt;a href="index.html"&gt;Home&lt;/a&gt; |
+                &lt;a href="about.html"&gt;About&lt;/a&gt; |
+                &lt;a href="services.html"&gt;Services&lt;/a&gt; |
+                &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+            &lt;/nav&gt;
+            &lt;p&gt;&lt;em&gt;Standard navigation links&lt;/em&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="example-box"&gt;
+            &lt;h2&gt;External Links with Target Attributes&lt;/h2&gt;
+            &lt;div class="link-demo"&gt;
+                &lt;a href="https://www.google.com" target="_blank" rel="noopener noreferrer"&gt;
+                    Google (opens in new tab)
+                &lt;/a&gt;&lt;br&gt;
+                &lt;a href="mailto:contact@example.com"&gt;Email Us&lt;/a&gt;&lt;br&gt;
+                &lt;a href="tel:+60123456789"&gt;Call Us: +60 12-345 6789&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;p&gt;&lt;em&gt;Various types of external links&lt;/em&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="example-box"&gt;
+            &lt;h2&gt;Image Gallery&lt;/h2&gt;
+            &lt;div style="display: flex; gap: 10px; flex-wrap: wrap;"&gt;
+                &lt;figure&gt;
+                    &lt;img src="https://via.placeholder.com/200x150/2b6777/ffffff?text=Image+1" 
+                         alt="Sample image 1 with blue background"&gt;
+                    &lt;figcaption&gt;Sample Image 1&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                &lt;figure&gt;
+                    &lt;img src="https://via.placeholder.com/200x150/4CAF50/ffffff?text=Image+2" 
+                         alt="Sample image 2 with green background"&gt;
+                    &lt;figcaption&gt;Sample Image 2&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                &lt;figure&gt;
+                    &lt;img src="https://via.placeholder.com/200x150/FF9800/ffffff?text=Image+3" 
+                         alt="Sample image 3 with orange background"&gt;
+                    &lt;figcaption&gt;Sample Image 3&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            &lt;/div&gt;
+            &lt;p&gt;&lt;em&gt;Image gallery with proper alt text and captions&lt;/em&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="example-box"&gt;
+            &lt;h2&gt;Image as a Link&lt;/h2&gt;
+            &lt;a href="product.html"&gt;
+                &lt;img src="https://via.placeholder.com/400x200/2196F3/ffffff?text=Product+Image" 
+                     alt="Product preview - click to view details"
+                     width="400" height="200"&gt;
+            &lt;/a&gt;
+            &lt;p&gt;&lt;em&gt;Clickable image leading to product page&lt;/em&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="example-box"&gt;
+            &lt;h2&gt;Responsive Image with srcset&lt;/h2&gt;
+            &lt;img src="https://via.placeholder.com/400x300"
+                 srcset="https://via.placeholder.com/200x150 200w,
+                         https://via.placeholder.com/400x300 400w,
+                         https://via.placeholder.com/800x600 800w"
+                 sizes="(max-width: 600px) 200px,
+                        (max-width: 1200px) 400px,
+                        800px"
+                 alt="Responsive image example that loads different sizes"
+                 width="400" height="300"&gt;
+            &lt;p&gt;&lt;em&gt;Responsive image that loads appropriate size based on screen&lt;/em&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="example-box"&gt;
+            &lt;h2&gt;Download Links&lt;/h2&gt;
+            &lt;div class="link-demo"&gt;
+                &lt;a href="sample.pdf" download="sample-document.pdf"&gt;
+                    &lt;i class="fas fa-download"&gt;&lt;/i&gt; Download PDF
+                &lt;/a&gt;&lt;br&gt;
+                &lt;a href="data.csv" download&gt;
+                    &lt;i class="fas fa-download"&gt;&lt;/i&gt; Download CSV Data
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;p&gt;&lt;em&gt;Links that trigger file downloads&lt;/em&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="example-box"&gt;
+            &lt;h2&gt;Page Anchor Links&lt;/h2&gt;
+            &lt;nav class="link-demo"&gt;
+                &lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt; |
+                &lt;a href="#section2"&gt;Jump to Section 2&lt;/a&gt; |
+                &lt;a href="#top"&gt;Back to Top&lt;/a&gt;
+            &lt;/nav&gt;
+            &lt;div id="section1" style="height: 300px; margin-top: 20px; background: #eee; padding: 20px;"&gt;
+                &lt;h3&gt;Section 1&lt;/h3&gt;
+                &lt;p&gt;This is section 1 content. &lt;a href="#top"&gt;Back to top&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div id="section2" style="height: 300px; margin-top: 20px; background: #ddd; padding: 20px;"&gt;
+                &lt;h3&gt;Section 2&lt;/h3&gt;
+                &lt;p&gt;This is section 2 content. &lt;a href="#top"&gt;Back to top&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;p&gt;&lt;em&gt;Internal page navigation using anchor links&lt;/em&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code>
+                    </div>
+                </section>
+
+                <!-- Live Test Section -->
+                <section class="test-section">
+                    <div class="test-header">Try it Yourself - Edit the code</div>
+                    <div class="editor-container">
+                        <textarea class="code-editor" id="htmlEditor" title="HTML code editor">&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Practice Links & Images&lt;/title&gt;
+        &lt;style&gt;
+            body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+            .task-box { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px; }
+            img { max-width: 100%; }
+            .links-container { margin: 10px 0; }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Practice Links & Images&lt;/h1&gt;
+        
+        &lt;div class="task-box"&gt;
+            &lt;h2&gt;Task 1: Create a navigation menu with 4 links&lt;/h2&gt;
+            &lt;div class="links-container"&gt;
+                &lt;!-- Create navigation links here --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="task-box"&gt;
+            &lt;h2&gt;Task 2: Insert an image with proper alt text&lt;/h2&gt;
+            &lt;!-- Insert an image here --&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="task-box"&gt;
+            &lt;h2&gt;Task 3: Create external links with different targets&lt;/h2&gt;
+            &lt;div class="links-container"&gt;
+                &lt;!-- Create external links here --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="task-box"&gt;
+            &lt;h2&gt;Task 4: Make an image clickable as a link&lt;/h2&gt;
+            &lt;!-- Create clickable image here --&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="task-box"&gt;
+            &lt;h2&gt;Task 5: Create email and phone links&lt;/h2&gt;
+            &lt;div class="links-container"&gt;
+                &lt;!-- Create email and phone links here --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</textarea>
+                        
+                        <button class="run-btn" onclick="runHTMLCode()">
+                            <i class="fas fa-play"></i>
+                            Run Code
+                        </button>
+                        
+                        <div class="output-container">
+                            <div class="output-title">Output</div>
+                            <iframe id="outputFrame" title="HTML Code Output"></iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Test Box -->
+                <div class="test-box">
+                    <h4>📝 Links & Images Challenge</h4>
+                    <p><strong>Challenge 1:</strong> Create a link that opens in a new tab with proper security attributes.</p>
+                    <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Solution</button>
+                    <div class="answer" id="answer1">
+                        <strong>Solution:</strong><br>
+                        <code>&lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer"&gt;<br>
+    &nbsp;&nbsp;Visit Example.com<br>
+    &lt;/a&gt;</code>
+                    </div>
+                    
+                    <p><strong>Challenge 2:</strong> Create an image with appropriate alt text, width, and height attributes.</p>
+                    <button class="answer-btn" onclick="toggleAnswer('answer2')">Show Solution</button>
+                    <div class="answer" id="answer2">
+                        <strong>Solution:</strong><br>
+                        <code>&lt;img src="photo.jpg" <br>
+    &nbsp;&nbsp;alt="A beautiful sunset over the mountains"<br>
+    &nbsp;&nbsp;width="600" height="400"<br>
+    &nbsp;&nbsp;title="Mountain sunset"&gt;</code>
+                    </div>
+                    
+                    <p><strong>Challenge 3:</strong> Create a responsive image that uses srcset for different screen sizes.</p>
+                    <button class="answer-btn" onclick="toggleAnswer('answer3')">Show Solution</button>
+                    <div class="answer" id="answer3">
+                        <strong>Solution:</strong><br>
+                        <code>&lt;img src="image-medium.jpg"<br>
+    &nbsp;&nbsp;srcset="image-small.jpg 400w,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image-medium.jpg 800w,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image-large.jpg 1200w"<br>
+    &nbsp;&nbsp;sizes="(max-width: 600px) 400px,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(max-width: 1200px) 800px,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1200px"<br>
+    &nbsp;&nbsp;alt="Responsive image example"&gt;</code>
+                    </div>
+                </div>
+
+                
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="nav-btn prev" onclick="window.location.href='html-lists.html'">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous: Lists
+                </button>
+                <button class="nav-btn next" onclick="window.location.href='html-forms.html'">
+                    Next: Forms (HTML5)
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER (same for all pages) -->
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+    <script>
+        // JavaScript for each page
+        function runHTMLCode() {
+            const editor = document.getElementById('htmlEditor');
+            const outputFrame = document.getElementById('outputFrame');
+            if (editor && outputFrame) {
+                const code = editor.value;
+                const iframeDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+                iframeDoc.open();
+                iframeDoc.write(code);
+                iframeDoc.close();
+            }
+        }
+        
+        function copyToEditor() {
+            const exampleCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice Links & Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        nav a { margin: 0 10px; }
+        img { max-width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>My Practice Page</h1>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    
+    <img src="https://via.placeholder.com/400x200" alt="Sample placeholder image">
+    
+    <p>Visit <a href="https://www.google.com" target="_blank">Google</a></p>
+</body>
+</html>`;
+            
+            const editor = document.getElementById('htmlEditor');
+            if (editor) {
+                editor.value = exampleCode;
+                runHTMLCode();
+            }
+        }
+        
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer) answer.classList.toggle('show');
+        }
+        
+        window.onload = function() {
+            runHTMLCode();
+        };
+    </script>
+</body>
+</html>

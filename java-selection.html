@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Java Selection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html" class="active">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2>Java Selection</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Java Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="java-intro.html"><i class="fas fa-play-circle"></i> Introduction to Java</a></li>
+                        <li><a href="java-input-output.html"><i class="fas fa-font"></i> Input Output</a></li>
+                        <li><a href="java-variables.html"><i class="fas fa-list"></i> Variables</a></li>
+                        <li><a href="java-operators.html"><i class="fas fa-link"></i> Operators</a></li>
+                        <li><a href="java-selection.html" class="active"><i class="fas fa-edit"></i> Selection</a></li>
+                        <li><a href="java-looping.html"><i class="fas fa-redo"></i> Looping</a></li>
+                        <li><a href="java-array.html"><i class="fas fa-sitemap"></i> Array</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="javaPage.html"><i class="fas fa-arrow-left"></i> Back to Java Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>if...else Statements</h1>
+                <p>Java uses conditional statements to perform different actions based on different conditions.</p>
+                
+                
+
+                <div class="example-box">
+                    <h3>The if Statement</h3>
+                    <p>Use the <code>if</code> statement to specify a block of Java code to be executed if a condition is <code>true</code>.</p>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Change the Time</div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="javaEditor" title="Java code editor for selection statements">public class Main {
+    public static void main(String[] args) {
+        int time = 20;
+        if (time < 18) {
+            System.out.println("Good day.");
+        } else {
+            System.out.println("Good evening.");
+        }
+    }
+}</textarea>
+                    <button class="run-btn" onclick="runJavaCode()"><i class="fas fa-play"></i> Run Code</button>
+                    <div class="output-container">
+                        <pre id="outputConsole"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='java-looping.html'">
+                    Next: Looping
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function runJavaCode() {
+            const code = document.getElementById('javaEditor').value;
+            const outputConsole = document.getElementById('outputConsole');
+            const timeMatch = code.match(/int\s+time\s*=\s*(\d+)/);
+
+            if (timeMatch) {
+                const time = parseInt(timeMatch[1]);
+                if (time < 18) {
+                    outputConsole.textContent = "Good day.";
+                } else {
+                    outputConsole.textContent = "Good evening.";
+                }
+            } else {
+                outputConsole.textContent = "Error: Please define 'int time = value;'";
+            }
+        }
+        window.onload = runJavaCode;
+    </script>
+
+    
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>

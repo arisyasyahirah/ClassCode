@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Variables & Data Study Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #main-heading {
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html" class="active">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">Variables & Data Types</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>JavaScript Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="js-introduction.html"><i class="fas fa-play-circle"></i> Introduction</a></li>
+                        <li><a href="js-components.html"><i class="fas fa-layer-group"></i> Components</a></li>
+                        <li><a href="js-variables.html" class="active"><i class="fas fa-list"></i> Variables & Data</a></li>
+                        <li><a href="js-operators.html"><i class="fas fa-plus-minus"></i> Operators</a></li>
+                        <li><a href="js-dialogs.html"><i class="fas fa-window-maximize"></i> Dialog Boxes</a></li>
+                        <li><a href="js-control.html"><i class="fas fa-sync"></i> Control Flow</a></li>
+                        <li><a href="js-functions.html"><i class="fas fa-rocket"></i> Functions</a></li>
+                        <li><a href="js-dom.html"><i class="fas fa-sitemap"></i> Objects & DOM</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Understanding Variables</h1>
+                <p>Variables are "containers" for storing information. In modern JavaScript, we use specific keywords to tell the browser how that container should behave.</p>
+                
+                
+
+                <div class="test-box" style="background-color: #e8f4fd; border-left: 5px solid #2196F3; padding: 25px; margin-bottom: 20px;">
+                    <h4><i class="fas fa-code"></i> Declaration Keywords</h4>
+                    <ul>
+                        <li><strong>let:</strong> Used for variables that <em>can</em> change later (re-assignable).</li>
+                        <li><strong>const:</strong> Used for variables that <em>cannot</em> change (constant).</li>
+                        <li><strong>var:</strong> The older way to declare variables (mostly avoided in modern code).</li>
+                    </ul>
+                </div>
+
+                <div class="test-box" style="background-color: #f9f9f9; border-left: 5px solid #4CAF50; padding: 25px; margin-bottom: 20px;">
+                    <h4><i class="fas fa-database"></i> Common Data Types</h4>
+                    <p>JavaScript variables can hold different types of data:</p>
+                    <ul>
+                        <li><strong>String:</strong> Text wrapped in quotes (e.g., "Hello").</li>
+                        <li><strong>Number:</strong> Decimals or integers (e.g., 25, 3.14).</li>
+                        <li><strong>Boolean:</strong> True or False values.</li>
+                        <li><strong>Array:</strong> A list of values (e.g., [1, 2, 3]).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Practice: Declare and Update Variables</div>
+                <p style="margin-bottom: 10px;">Try creating a variable and displaying it in the console below.</p>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="jsEditor" title="JS code editor" rows="8" style="width: 100%; font-family: monospace;">/* 1. Create a variable */
+let studentName = "Alex";
+const graduationYear = 2026;
+
+/* 2. Update a variable */
+studentName = "Alex Smith"; 
+
+/* 3. Output results */
+console.log("Student Name:", studentName);
+console.log("Graduation Year:", graduationYear);
+console.log("Data Type of Year:", typeof graduationYear);</textarea>
+                    
+                    <button class="run-btn" onclick="runJSCode()" style="margin-top: 10px; padding: 10px 20px; cursor: pointer;">
+                        <i class="fas fa-play"></i> Run Code
+                    </button>
+                    
+                    <div class="output-container" style="margin-top: 20px;">
+                        <div class="output-title">Output Console</div>
+                        <pre id="outputConsole" style="background: #1e1e1e; color: #98FB98; padding: 15px; border-radius: 4px; overflow-x: auto;">Output will appear here...</pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function runJSCode() {
+            const editor = document.getElementById('jsEditor');
+            const outputConsole = document.getElementById('outputConsole');
+            const code = editor.value;
+
+            try {
+                let logs = [];
+                const originalLog = console.log;
+                console.log = function(...args) {
+                    logs.push(args.join(' '));
+                };
+
+                eval(code);
+
+                console.log = originalLog;
+                outputConsole.textContent = logs.length > 0 ? logs.join('\n') : "Code executed successfully!";
+                outputConsole.style.color = "#98FB98"; 
+            } catch (err) {
+                outputConsole.textContent = "Error: " + err.message;
+                outputConsole.style.color = "#ff6b6b"; 
+            }
+        }
+        window.onload = runJSCode;
+    </script>
+</body>
+</html>

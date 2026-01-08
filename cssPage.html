@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | CSS Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html" class="active">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2 id="main-heading">CSS Tutorial</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>CSS Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="css-intro.html"><i class="fas fa-play-circle"></i> Introduction to CSS</a></li>
+                        <li><a href="css-selectors.html"><i class="fas fa-mouse-pointer"></i> Selectors & Specificity</a></li>
+                        <li><a href="css-colors.html"><i class="fas fa-palette"></i> Colors & Backgrounds</a></li>
+                        <li><a href="css-boxmodel.html"><i class="fas fa-square"></i> The Box Model</a></li>
+                        <li><a href="css-typography.html"><i class="fas fa-font"></i> Typography & Fonts</a></li>
+                        <li><a href="css-layout.html"><i class="fas fa-th-large"></i> Flexbox & Grid</a></li>
+                        <li><a href="css-positioning.html"><i class="fas fa-arrows-alt"></i> Positioning</a></li>
+                        <li><a href="css-animations.html"><i class="fas fa-magic"></i> Transitions & Effects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="cssPage.html"><i class="fas fa-home"></i> Chapter Overview</a></li>
+                        <li><a href="css-intro.html"><i class="fas fa-arrow-right"></i> Next: Introduction</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Mastering Website Styling</h1>
+                <p>Cascading Style Sheets (CSS) is the language used to style an HTML document. It describes how HTML elements should be displayed on screen. Select a module below to begin:</p>
+                
+                <ul>
+                    <li>Understand Inline, Internal, and External CSS methods.</li>
+                    <li>Learn the relationship between Content, Padding, Borders, and Margins.</li>
+                    <li>Master layout techniques like Flexbox for modern web design.</li>
+                    <li>Practice making websites responsive across all device sizes.</li>
+                </ul>
+                
+                <div class="language-grid" style="margin-top: 30px;">
+                    <a href="css-intro.html" class="language-card">
+                        <h3><i class="fas fa-play-circle"></i> Introduction</h3>
+                        <p>Learn CSS Syntax, how to link stylesheets, and the "Cascade" rule.</p>
+                    </a>
+                    <a href="css-selectors.html" class="language-card">
+                        <h3><i class="fas fa-mouse-pointer"></i> Selectors</h3>
+                        <p>Target elements using IDs, Classes, Attributes, and Pseudo-classes.</p>
+                    </a>
+                    <a href="css-boxmodel.html" class="language-card">
+                        <h3><i class="fas fa-square"></i> Box Model</h3>
+                        <p>The core of CSS layout: margins, borders, padding, and content.</p>
+                    </a>
+                    <a href="css-layout.html" class="language-card">
+                        <h3><i class="fas fa-th-large"></i> Flexbox & Grid</h3>
+                        <p>Modern techniques for creating flexible and complex page layouts.</p>
+                    </a>
+                    <a href="css-typography.html" class="language-card">
+                        <h3><i class="fas fa-font"></i> Typography</h3>
+                        <p>Web-safe fonts, Google Fonts, line-height, and text alignment.</p>
+                    </a>
+                    <a href="css-colors.html" class="language-card">
+                        <h3><i class="fas fa-palette"></i> Colors</h3>
+                        <p>Hex codes, RGB, HSL, and styling gradients and backgrounds.</p>
+                    </a>
+                    <a href="css-positioning.html" class="language-card">
+                        <h3><i class="fas fa-arrows-alt"></i> Positioning</h3>
+                        <p>Understand Static, Relative, Absolute, Fixed, and Sticky positions.</p>
+                    </a>
+                    <a href="css-animations.html" class="language-card">
+                        <h3><i class="fas fa-magic"></i> Animations</h3>
+                        <p>Bring your site to life with hover effects and keyframe animations.</p>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>The Role of CSS</h2>
+                <p>CSS is essential for modern web development because:</p>
+                <ul>
+                    <li>It separates <strong>Content</strong> (HTML) from <strong>Presentation</strong> (CSS).</li>
+                    <li>It allows for <strong>Consistency</strong> across multiple pages from a single file.</li>
+                    <li>It enables <strong>Responsive Design</strong>, allowing sites to work on phones and desktops.</li>
+                    <li>It improves page loading speeds by reducing HTML code bloat.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>

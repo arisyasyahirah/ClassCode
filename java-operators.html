@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | Java Operators</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html" class="active">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <section class="subject-header">
+        <h2>Java Operators</h2>
+    </section>
+
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Java Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="java-intro.html"><i class="fas fa-play-circle"></i> Introduction to Java</a></li>
+                        <li><a href="java-input-output.html"><i class="fas fa-font"></i> Input Output</a></li>
+                        <li><a href="java-variables.html"><i class="fas fa-list"></i> Variables</a></li>
+                        <li><a href="java-operators.html" class="active"><i class="fas fa-link"></i> Operators</a></li>
+                        <li><a href="java-selection.html"><i class="fas fa-edit"></i> Selection</a></li>
+                        <li><a href="java-looping.html"><i class="fas fa-redo"></i> Looping</a></li>
+                        <li><a href="java-array.html"><i class="fas fa-sitemap"></i> Array</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="javaPage.html"><i class="fas fa-arrow-left"></i> Back to Java Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Java Operators</h1>
+                
+                <p>Operators are used to perform operations on variables and values. In Java, operators are grouped into several categories based on their functionality.</p>
+
+                
+
+                <h2>Common Operator Types</h2>
+                
+                <ul>
+                    <li><strong>Arithmetic Operators:</strong> Used to perform common mathematical operations (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>).</li>
+                    <li><strong>Assignment Operators:</strong> Used to assign values to variables (<code>=</code>, <code>+=</code>, <code>-=</code>).</li>
+                    <li><strong>Comparison Operators:</strong> Used to compare two values (<code>==</code>, <code>!=</code>, <code>></code>, <code><</code>).</li>
+                    <li><strong>Logical Operators:</strong> Used to determine the logic between variables (<code>&&</code>, <code>||</code>, <code>!</code>).</li>
+                </ul>
+                
+                <div class="example-box">
+                    <h3>The Modulo Operator (%)</h3>
+                    <p>The modulo operator returns the division remainder. For example, <code>5 % 2</code> results in <code>1</code>.</p>
+                </div>
+            </section>
+
+            <section class="code-section">
+                <div class="code-header">
+                    <div class="code-title">Example: Arithmetic</div>
+                    <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                </div>
+                <div class="code-block">
+                    <code id="codeSample">int sum = 100 + 50;
+System.out.println("Result: " + sum); 
+// Output: Result: 150</code>
+                </div>
+            </section>
+
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Perform Calculations</div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="javaEditor" title="Java code editor">public class Main {
+    public static void main(String[] args) {
+        // Try changing the numbers or the operator (+, -, *, /)
+        int a = 10;
+        int b = 5;
+        
+        int result = a + b;
+        System.out.println("The result is: " + result);
+    }
+}</textarea>
+                    
+                    <button class="run-btn" onclick="runJavaCode()">
+                        <i class="fas fa-play"></i>
+                        Run Code
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Output</div>
+                        <pre id="outputConsole"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="test-box">
+                <h4>📝 Predict the Result</h4>
+                <p><strong>Question:</strong> What is the result of <code>10 > 9 && 5 < 2</code>?</p>
+                <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+                <div class="answer" id="answer1">
+                    <strong>Answer:</strong> <code>false</code>. Although 10 is greater than 9 (true), 5 is NOT less than 2 (false). Since the <code>&&</code> (AND) operator requires both to be true, the final result is false.
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn next" onclick="window.location.href='java-selection.html'">
+                    Next: Selection
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function runJavaCode() {
+            const editor = document.getElementById('javaEditor');
+            const outputConsole = document.getElementById('outputConsole');
+            const code = editor.value;
+            let output = "";
+
+            try {
+                // Regex to find variables a and b, and the operator
+                const varAMatch = code.match(/int\s+a\s*=\s*(\d+)\s*;/);
+                const varBMatch = code.match(/int\s+b\s*=\s*(\d+)\s*;/);
+                const opMatch = code.match(/int\s+result\s*=\s*a\s*([+\-*/%])\s*b\s*;/);
+
+                if (varAMatch && varBMatch && opMatch) {
+                    const a = parseInt(varAMatch[1]);
+                    const b = parseInt(varBMatch[1]);
+                    const op = opMatch[1];
+                    let res;
+
+                    switch(op) {
+                        case '+': res = a + b; break;
+                        case '-': res = a - b; break;
+                        case '*': res = a * b; break;
+                        case '/': res = b !== 0 ? Math.floor(a / b) : "Error: / by zero"; break;
+                        case '%': res = a % b; break;
+                    }
+                    output = "The result is: " + res;
+                } else {
+                    output = "Simulation Error: Keep format 'int a = X; int b = Y; int result = a + b;'";
+                }
+            } catch (e) {
+                output = "Check your syntax!";
+            }
+            outputConsole.textContent = output;
+        }
+        
+        function copyToEditor() {
+            const exampleCode = `public class Main {\n    public static void main(String[] args) {\n        int a = 10;\n        int b = 5;\n        int result = a + b;\n        System.out.println("The result is: " + result);\n    }\n}`;
+            document.getElementById('javaEditor').value = exampleCode;
+            runJavaCode();
+        }
+        
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            answer.classList.toggle('show');
+        }
+        
+        window.onload = runJavaCode;
+    </script>
+</body>
+</html>

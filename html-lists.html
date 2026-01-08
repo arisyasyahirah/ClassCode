@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | HTML Lists</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional styles for the interactive elements */
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+        }
+        
+        #outputFrame {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+        
+        .code-editor {
+            width: 100%;
+            height: 200px;
+            font-family: 'Courier New', monospace;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html" class="active">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- SUBJECT TITLE -->
+    <section class="subject-header">
+        <h2>HTML Lists</h2>
+    </section>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>HTML5 Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="html-intro.html"><i class="fas fa-play-circle"></i> Introduction to HTML5</a></li>
+                        <li><a href="html-structure.html"><i class="fas fa-code"></i> Structure & Syntax</a></li>
+                        <li><a href="html-text.html"><i class="fas fa-font"></i> Text & Inline Elements</a></li>
+                        <li><a href="html-lists.html" class="active"><i class="fas fa-list"></i> Lists</a></li>
+                        <li><a href="html-links.html"><i class="fas fa-link"></i> Links & Images</a></li>
+                        <li><a href="html-forms.html"><i class="fas fa-edit"></i> Forms (HTML5)</a></li>
+                        <li><a href="html-multimedia.html"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                        <li><a href="html-semantic.html"><i class="fas fa-sitemap"></i> Semantic HTML</a></li>
+                        <li><a href="html-exercises.html"><i class="fas fa-puzzle-piece"></i> Examples & Exercises</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="htmlPage.html"><i class="fas fa-arrow-left"></i> Back to HTML Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <section class="content-section">
+                <h1>HTML Lists: Organizing Content</h1>
+                
+                <p>Lists are essential for organizing related items in a structured way. HTML provides three main types of lists: unordered, ordered, and description lists.</p>
+            
+                <h2>Types of Lists</h2>
+                
+                <h3>1. Unordered Lists (<code>&lt;ul&gt;</code>)</h3>
+                <div class="example-box">
+                    <p>Used for items where order doesn't matter. Typically displays with bullets.</p>
+                    <div class="example-output">
+                        <h4>Example Output:</h4>
+                        <ul>
+                            <li>Apples</li>
+                            <li>Bananas</li>
+                            <li>Oranges</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>2. Ordered Lists (<code>&lt;ol&gt;</code>)</h3>
+                <div class="example-box">
+                    <p>Used for sequential items where order matters. Displays with numbers or letters.</p>
+                    <div class="example-output">
+                        <h4>Example Output:</h4>
+                        <ol>
+                            <li>Preheat oven to 350°F</li>
+                            <li>Mix dry ingredients</li>
+                            <li>Add wet ingredients</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h3>3. Description Lists (<code>&lt;dl&gt;</code>)</h3>
+                <div class="example-box">
+                    <p>Used for terms and their descriptions (like a dictionary).</p>
+                    <div class="example-output">
+                        <h4>Example Output:</h4>
+                        <dl>
+                            <dt>HTML</dt>
+                            <dd>HyperText Markup Language - structures web content</dd>
+                            <dt>CSS</dt>
+                            <dd>Cascading Style Sheets - styles web content</dd>
+                        </dl>
+                    </div>
+                </div>
+                
+                <h2>List Attributes</h2>
+                <div class="example-box">
+                    <h4>Ordered List Attributes:</h4>
+                    <table class="element-table">
+                        <thead>
+                            <tr>
+                                <th>Attribute</th>
+                                <th>Values</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>type</code></td>
+                                <td>1, A, a, I, i</td>
+                                <td>Numbering style (1, A, a, I, i)</td>
+                            </tr>
+                            <tr>
+                                <td><code>start</code></td>
+                                <td>number</td>
+                                <td>Starting number</td>
+                            </tr>
+                            <tr>
+                                <td><code>reversed</code></td>
+                                <td>reversed</td>
+                                <td>Counts backwards</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4>Examples:</h4>
+                    <pre>&lt;ol type="A"&gt;  &lt;!-- A, B, C --&gt;
+&lt;ol type="I"&gt;  &lt;!-- I, II, III --&gt;
+&lt;ol start="5"&gt; &lt;!-- Starts at 5 --&gt;
+&lt;ol reversed&gt;  &lt;!-- Counts backwards --&gt;</pre>
+                </div>
+                
+                <h2>Nested Lists</h2>
+                <div class="example-box">
+                    <p>Lists can be nested inside other lists to create hierarchies.</p>
+                    <div class="example-output">
+                        <h4>Example Output:</h4>
+                        <ul>
+                            <li>Fruits
+                                <ul>
+                                    <li>Apples</li>
+                                    <li>Bananas</li>
+                                </ul>
+                            </li>
+                            <li>Vegetables
+                                <ul>
+                                    <li>Carrots</li>
+                                    <li>Broccoli</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Custom List Markers</h2>
+                <div class="example-box">
+                    <p>Using CSS to customize list appearance:</p>
+                    <pre>ul.custom {
+    list-style-type: square;
+}
+
+ol.roman {
+    list-style-type: upper-roman;
+}
+
+ul.images {
+    list-style-image: url('bullet.png');
+}</pre>
+                </div>
+                
+                <h2>Best Practices</h2>
+                <ul>
+                    <li>Use unordered lists for navigation menus</li>
+                    <li>Use ordered lists for step-by-step instructions</li>
+                    <li>Use description lists for glossaries or metadata</li>
+                    <li>Keep lists concise and focused</li>
+                    <li>Use proper indentation for nested lists</li>
+                    <li>Consider accessibility - screen readers announce list types</li>
+                </ul>
+            </section>
+
+            <!-- Code Example Section -->
+            <section class="code-section">
+                <div class="code-header">
+                    <div class="code-title">Complete List Example</div>
+                    <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                </div>
+                <div class="code-block">
+                    <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;HTML Lists Example&lt;/title&gt;
+    &lt;style&gt;
+        .menu { list-style-type: none; padding: 0; }
+        .menu li { display: inline-block; margin-right: 15px; }
+        .steps { list-style-type: decimal-leading-zero; }
+        .custom-bullets { list-style-type: square; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;HTML Lists Demonstration&lt;/h1&gt;
+    
+    &lt;h2&gt;Navigation Menu (Unordered List)&lt;/h2&gt;
+    &lt;ul class="menu"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Cooking Steps (Ordered List)&lt;/h2&gt;
+    &lt;ol class="steps" start="1"&gt;
+        &lt;li&gt;Gather ingredients&lt;/li&gt;
+        &lt;li&gt;Preheat oven to 180°C&lt;/li&gt;
+        &lt;li&gt;Mix dry ingredients&lt;/li&gt;
+        &lt;li&gt;Add wet ingredients&lt;/li&gt;
+        &lt;li&gt;Bake for 30 minutes&lt;/li&gt;
+    &lt;/ol&gt;
+    
+    &lt;h2&gt;Shopping List (Nested List)&lt;/h2&gt;
+    &lt;ul class="custom-bullets"&gt;
+        &lt;li&gt;Fruits
+            &lt;ul&gt;
+                &lt;li&gt;Apples&lt;/li&gt;
+                &lt;li&gt;Bananas&lt;/li&gt;
+                &lt;li&gt;Oranges&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Vegetables
+            &lt;ul&gt;
+                &lt;li&gt;Carrots&lt;/li&gt;
+                &lt;li&gt;Broccoli&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Web Technologies (Description List)&lt;/h2&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;HTML&lt;/dt&gt;
+        &lt;dd&gt;Structures web content&lt;/dd&gt;
+        &lt;dt&gt;CSS&lt;/dt&gt;
+        &lt;dd&gt;Styles web content&lt;/dd&gt;
+        &lt;dt&gt;JavaScript&lt;/dt&gt;
+        &lt;dd&gt;Adds interactivity to web pages&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                </div>
+            </section>
+
+            <!-- Live Test Section -->
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Edit the code</div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="htmlEditor" title="HTML code editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Practice Lists&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Practice Creating Lists&lt;/h1&gt;
+    
+    &lt;h2&gt;Create an unordered list of your favorite movies:&lt;/h2&gt;
+    &lt;!-- Create your unordered list here --&gt;
+    
+    &lt;h2&gt;Create an ordered list of steps to make coffee:&lt;/h2&gt;
+    &lt;!-- Create your ordered list here --&gt;
+    
+    &lt;h2&gt;Create a nested list of course subjects:&lt;/h2&gt;
+    &lt;!-- Create your nested list here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                    
+                    <button class="run-btn" onclick="runHTMLCode()">
+                        <i class="fas fa-play"></i>
+                        Run Code
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Output</div>
+                        <iframe id="outputFrame" title="HTML Code Output"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Test Box -->
+            <div class="test-box">
+                <h4>📝 List Challenge</h4>
+                <p><strong>Challenge 1:</strong> Create an ordered list that starts at 10 and uses roman numerals.</p>
+                <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Solution</button>
+                <div class="answer" id="answer1">
+                    <strong>Solution:</strong><br>
+                    <code>&lt;ol type="I" start="10"&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Item X&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Item XI&lt;/li&gt;<br>
+&lt;/ol&gt;</code>
+                </div>
+                
+                <p><strong>Challenge 2:</strong> Create a description list for three programming languages.</p>
+                <button class="answer-btn" onclick="toggleAnswer('answer2')">Show Solution</button>
+                <div class="answer" id="answer2">
+                    <strong>Solution:</strong><br>
+                    <code>&lt;dl&gt;<br>
+&nbsp;&nbsp;&lt;dt&gt;Python&lt;/dt&gt;<br>
+&nbsp;&nbsp;&lt;dd&gt;High-level programming language&lt;/dd&gt;<br>
+&nbsp;&nbsp;&lt;dt&gt;Java&lt;/dt&gt;<br>
+&nbsp;&nbsp;&lt;dd&gt;Object-oriented programming language&lt;/dd&gt;<br>
+&nbsp;&nbsp;&lt;dt&gt;JavaScript&lt;/dt&gt;<br>
+&nbsp;&nbsp;&lt;dd&gt;Scripting language for web pages&lt;/dd&gt;<br>
+&lt;/dl&gt;</code>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="nav-btn prev" onclick="window.location.href='html-text.html'">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous: Text & Inline Elements
+                </button>
+                <button class="nav-btn next" onclick="window.location.href='html-links.html'">
+                    Next: Links & Images
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        // Function to copy example code to editor
+        function copyToEditor() {
+            const exampleCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Lists Example</title>
+    <style>
+        .menu { list-style-type: none; padding: 0; }
+        .menu li { display: inline-block; margin-right: 15px; }
+        .steps { list-style-type: decimal-leading-zero; }
+        .custom-bullets { list-style-type: square; }
+    </style>
+</head>
+<body>
+    <h1>HTML Lists Demonstration</h1>
+    
+    <h2>Navigation Menu (Unordered List)</h2>
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+    </ul>
+    
+    <h2>Cooking Steps (Ordered List)</h2>
+    <ol class="steps" start="1">
+        <li>Gather ingredients</li>
+        <li>Preheat oven to 180°C</li>
+        <li>Mix dry ingredients</li>
+        <li>Add wet ingredients</li>
+        <li>Bake for 30 minutes</li>
+    </ol>
+    
+    <h2>Shopping List (Nested List)</h2>
+    <ul class="custom-bullets">
+        <li>Fruits
+            <ul>
+                <li>Apples</li>
+                <li>Bananas</li>
+                <li>Oranges</li>
+            </ul>
+        </li>
+        <li>Vegetables
+            <ul>
+                <li>Carrots</li>
+                <li>Broccoli</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>Web Technologies (Description List)</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Structures web content</dd>
+        <dt>CSS</dt>
+        <dd>Styles web content</dd>
+        <dt>JavaScript</dt>
+        <dd>Adds interactivity to web pages</dd>
+    </dl>
+</body>
+</html>`;
+            
+            const editor = document.getElementById('htmlEditor');
+            editor.value = exampleCode;
+            alert('Example code copied to editor! Try modifying it and click "Run Code".');
+        }
+
+        // Function to run HTML code in the output frame
+        function runHTMLCode() {
+            const editor = document.getElementById('htmlEditor');
+            const outputFrame = document.getElementById('outputFrame');
+            
+            try {
+                // Get the HTML code from the editor
+                const htmlCode = editor.value;
+                
+                // Write the HTML code to the iframe
+                const iframeDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+                iframeDoc.open();
+                iframeDoc.write(htmlCode);
+                iframeDoc.close();
+                
+                // Add some basic styling to make output more readable
+                const style = iframeDoc.createElement('style');
+                style.textContent = `
+                    body { 
+                        font-family: Arial, sans-serif; 
+                        padding: 20px; 
+                        margin: 0;
+                        background-color: #f5f5f5;
+                    }
+                    h1, h2 { color: #333; }
+                    ul, ol { margin-left: 20px; }
+                    li { margin: 5px 0; }
+                    dl { margin-left: 20px; }
+                    dt { font-weight: bold; margin-top: 10px; }
+                    dd { margin-left: 20px; margin-bottom: 10px; }
+                `;
+                iframeDoc.head.appendChild(style);
+                
+                // Show success message
+                console.log('Code executed successfully!');
+                
+            } catch (error) {
+                console.error('Error running code:', error);
+                alert('Error running code. Please check the console for details.');
+            }
+        }
+
+        // Function to toggle answers for challenges
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            const button = event.target;
+            
+            if (answer.style.display === 'block' || answer.style.display === '') {
+                answer.style.display = 'none';
+                button.textContent = 'Show Solution';
+            } else {
+                answer.style.display = 'block';
+                button.textContent = 'Hide Solution';
+            }
+        }
+
+        // Initialize answers to be hidden by default
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.answer').forEach(answer => {
+                answer.style.display = 'none';
+            });
+            
+            // Initialize the output frame with a default message
+            const outputFrame = document.getElementById('outputFrame');
+            const iframeDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(`
+                <html>
+                <head><style>
+                    body { 
+                        font-family: Arial, sans-serif; 
+                        padding: 20px; 
+                        margin: 0;
+                        background-color: #f5f5f5;
+                        color: #666;
+                    }
+                    h3 { color: #333; }
+                </style></head>
+                <body>
+                    <h3>Output Preview</h3>
+                    <p>Click "Run Code" to see your HTML code executed here.</p>
+                    <p>Try editing the code in the editor above and click "Run Code" again to see changes.</p>
+                </body>
+                </html>
+            `);
+            iframeDoc.close();
+        });
+    </script>
+</body>
+</html>

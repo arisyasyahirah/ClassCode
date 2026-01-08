@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | HTML Structure & Syntax</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html" class="active">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- SUBJECT TITLE -->
+    <section class="subject-header">
+        <h2>HTML Structure & Syntax</h2>
+    </section>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>HTML5 Topics</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="html-intro.html"><i class="fas fa-play-circle"></i> Introduction to HTML5</a></li>
+                        <li><a href="html-structure.html"><i class="fas fa-code"></i> Structure & Syntax</a></li>
+                        <li><a href="html-text.html"><i class="fas fa-font"></i> Text & Inline Elements</a></li>
+                        <li><a href="html-lists.html"><i class="fas fa-list"></i> Lists</a></li>
+                        <li><a href="html-links.html"><i class="fas fa-link"></i> Links & Images</a></li>
+                        <li><a href="html-forms.html"><i class="fas fa-edit"></i> Forms (HTML5)</a></li>
+                        <li><a href="html-multimedia.html"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                        <li><a href="html-semantic.html"><i class="fas fa-sitemap"></i> Semantic HTML</a></li>
+                        <li><a href="html-exercises.html"><i class="fas fa-puzzle-piece"></i> Examples & Exercises</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Quick Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="htmlPage.html"><i class="fas fa-arrow-left"></i> Back to HTML Tutorial</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <section class="content-section">
+                <h1>HTML5 Structure & Syntax</h1>
+                
+                <h2>Document Structure</h2>
+                <p>Every HTML5 document follows a basic structure:</p>
+                <ul>
+                    <li><strong><code>&lt;!DOCTYPE html&gt;</code></strong> - Declares the document type</li>
+                    <li><strong><code>&lt;html&gt;</code></strong> - Root element</li>
+                    <li><strong><code>&lt;head&gt;</code></strong> - Contains metadata</li>
+                    <li><strong><code>&lt;body&gt;</code></strong> - Contains visible content</li>
+                </ul>
+
+                <h2>HTML Syntax Rules</h2>
+                <ul>
+                    <li>Tags are enclosed in angle brackets: <code>&lt;tag&gt;</code></li>
+                    <li>Most tags come in pairs: opening and closing</li>
+                    <li>Tags must be properly nested</li>
+                    <li>Attributes provide additional information</li>
+                    <li>HTML5 is case-insensitive but lowercase is recommended</li>
+                </ul>
+
+                <h2>Proper Nesting</h2>
+                <p>Tags must open and close in the correct order.</p>
+                
+                <div class="error-box">
+                    <h4>❌ Incorrect:</h4>
+                    <pre>&lt;p&gt;&lt;strong&gt;Hello&lt;/p&gt;&lt;/strong&gt;</pre>
+                </div>
+                
+                <div class="example-box">
+                    <h4>✔ Correct:</h4>
+                    <pre>&lt;p&gt;&lt;strong&gt;Hello&lt;/strong&gt;&lt;/p&gt;</pre>
+                </div>
+
+                <h2>Block vs Inline Elements</h2>
+                <ul>
+                    <li><strong>Block:</strong> <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code></li>
+                    <li><strong>Inline:</strong> <code>&lt;span&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code></li>
+                </ul>
+            </section>
+
+            <!-- Code Example Section -->
+            <section class="code-section">
+                <div class="code-header">
+                    <div class="code-title">Example</div>
+                    <button class="try-it-btn" onclick="copyToEditor()">Try it Yourself</button>
+                </div>
+                <div class="code-block">
+                    <code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Structure Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Website Title&lt;/h1&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Article Title&lt;/h2&gt;
+            &lt;p&gt;This is a paragraph with &lt;strong&gt;bold text&lt;/strong&gt;.&lt;/p&gt;
+            &lt;p&gt;This text is &lt;em&gt;emphasized&lt;/em&gt;.&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Copyright 2025&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                </div>
+            </section>
+
+            <!-- Live Test Section -->
+            <section class="test-section">
+                <div class="test-header">Try it Yourself - Edit the code</div>
+                <div class="editor-container">
+                    <textarea class="code-editor" id="htmlEditor" title="HTML Code Editor">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Structure Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;p&gt;Welcome to my site.&lt;/p&gt;
+    &lt;p&gt;This is &lt;strong&gt;important&lt;/strong&gt; text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                    
+                    <button class="run-btn" onclick="runHTMLCode()">
+                        <i class="fas fa-play"></i>
+                        Run Code
+                    </button>
+                    
+                    <div class="output-container">
+                        <div class="output-title">Output</div>
+                        <iframe id="outputFrame" title="HTML Code Output"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Test Box -->
+            <div class="test-box">
+                <h4>🔍 Find the Error</h4>
+                <p><strong>Question:</strong> What's wrong with this HTML code?</p>
+                <pre><code>&lt;h1&gt;Title&lt;/h1&gt;
+            &lt;p&gt;Paragraph &lt;strong&gt;bold&lt;/p&gt;&lt;/strong&gt;</code></pre>
+                <button class="answer-btn" onclick="toggleAnswer('answer1')">Show Answer</button>
+                <div class="answer" id="answer1">
+                    <strong>Answer:</strong> The tags are not properly nested. The closing <code>&lt;/strong&gt;</code> tag should come before the closing <code>&lt;/p&gt;</code> tag.<br>
+                    <strong>Correct:</strong> <code>&lt;h1&gt;Title&lt;/h1&gt;<br>&lt;p&gt;Paragraph &lt;strong&gt;bold&lt;/strong&gt;&lt;/p&gt;</code>
+                </div>
+            </div>
+
+            
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="nav-btn prev" onclick="window.location.href='html-intro.html'">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous: Introduction
+                </button>
+                <button class="nav-btn next" onclick="window.location.href='html-text.html'">
+                    Next: Text Elements
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function runHTMLCode() {
+            const editor = document.getElementById('htmlEditor');
+            const outputFrame = document.getElementById('outputFrame');
+            const code = editor.value;
+            
+            const iframeDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(code);
+            iframeDoc.close();
+        }
+        
+        function copyToEditor() {
+            const exampleCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Structure Example</title>
+</head>
+<body>
+    <header>
+        <h1>Website Title</h1>
+    </header>
+    
+    <main>
+        <article>
+            <h2>Article Title</h2>
+            <p>This is a paragraph with <strong>bold text</strong>.</p>
+            <p>This text is <em>emphasized</em>.</p>
+        </article>
+    </main>
+    
+    <footer>
+        <p>Copyright 2025</p>
+    </footer>
+</body>
+</html>`;
+            
+            document.getElementById('htmlEditor').value = exampleCode;
+            runHTMLCode();
+            
+            document.querySelector('.test-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            answer.classList.toggle('show');
+        }
+        
+        window.onload = function() {
+            runHTMLCode();
+        };
+    </script>
+</body>
+</html>

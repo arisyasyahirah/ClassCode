@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassCode | FAQ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="logo"><a href="index.html">Classcode</a></div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <button class="resource" onclick="window.location.href='resources.html'">Resources</button>
+        </nav>
+    </header>
+    
+    <section class="subject-nav">
+        <a href="javaPage.html">Java</a>
+        <a href="htmlPage.html">HTML</a>
+        <a href="cssPage.html">CSS</a>
+        <a href="jsPage.html">JS</a>
+        <a href="sqlPage.html">SQL</a>
+    </section>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Navigation</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="htmlPage.html">Lessons</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="content-section">
+                <h1>Frequently Asked Questions (FAQ)</h1>
+                <p>Find answers to common questions about a computer science class.</p>
+            </section>
+
+            <!-- ClassCode -->
+                <section class="content-section">  
+                    <h2>ClassCode</h2>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq15">
+                        <label for="faq15" class="faq-question">What is ClassCode?</label>
+                        <div class="faq-answer">
+                            <p>ClassCode is an online platform that helps students strengthen their understanding of core programming subjects through practical code examples and a built-in code editor for testing and practice. It is specifically designed for first and second-year Computer Science students who want to improve their coding skills through interactive learning.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq16">
+                        <label for="faq16" class="faq-question">What makes ClassCode different from existing learning platforms.</label>
+                        <div class="faq-answer">
+                            <p>ClassCode distinguishes itself from generic learning platforms like W3Schools through its focused academic approach, which is specifically tailored to align with the syllabuses of Computer Science students. Rather than offering only isolated examples, the platform provides comprehensive resources, including textbook PDFs, lecture slides, and structured notes organized by subject such as Java, SQL, Web, and Design. It fosters an integrated learning environment by seamlessly combining theoretical materials with hands-on practice through its built-in interactive editor. Additionally, the content is designed to complement actual academic coursework, rather than merely offering general programming knowledge. To further support students, ClassCode incorporates a dedicated FAQ section and support resources specifically aimed at addressing the needs of student learners.</p>
+                        </div>
+                    </div>
+                </section>
+
+            <!-- Java Basics -->
+            <section class="content-section">
+                <h2>Java Basics</h2>
+                
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1">
+                    <label for="faq1" class="faq-question">What is the main difference between JDK, JRE, and JVM?</label>
+                    <div class="faq-answer">
+                        <p>The JDK (Java Development Kit) is a superset of the JRE (Java Runtime Environment) and includes tools for developing Java applications. The JRE is a subset of the JDK and contains the Java Virtual Machine (JVM) and libraries needed to run Java applications. The JVM (Java Virtual Machine) is an abstract machine that provides a runtime environment for executing Java bytecode.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2">
+                    <label for="faq2" class="faq-question">What are the main principles of OOP in Java?</label>
+                    <div class="faq-answer">
+                        <p>The main principles of OOP in Java are encapsulation, inheritance, polymorphism, and abstraction. Encapsulation involves bundling data and methods together and controlling access to them. Inheritance allows a class to inherit properties and methods from another class. Polymorphism enables objects of different types to be treated as instances of the same type through a common interface. Abstraction focuses on hiding complex implementation details and showing only essential features of an object.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq3">
+                    <label for="faq3" class="faq-question">What's the difference between == and .equals()?</label>
+                    <div class="faq-answer">
+                        <p>The == operator compares the references of two objects, checking if they point to the same memory location. The .equals() method compares the actual content or value of two objects. For primitive types, == checks for equality of values, while for objects, it checks for reference equality unless overridden by a custom equals() method.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HTML Basics -->
+            <section class="content-section">
+                <h2>HTML Basics</h2>
+                
+                <div class="faq-item">
+                    <input type="checkbox" id="faq4">
+                    <label for="faq4" class="faq-question">What is semantic HTML and why is it important?</label>
+                    <div class="faq-answer">
+                        <p>Semantic HTML uses meaningful tags to describe the purpose of content, such as &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, and &lt;footer&gt;. This improves accessibility, SEO, and code readability. Screen readers use semantic tags to navigate content more effectively, and search engines can better understand the structure and context of your page.</p>
+                        </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq5">
+                    <label for="faq5" class="faq-question">What is a doctype?</label>
+                    <div class="faq-answer">
+                        <p>The DOCTYPE declaration tells the browser which version of HTML the page is written in. For HTML5, use &lt;!DOCTYPE html&gt;. It must be the first line in your HTML document (before the &lt;html&gt; tag). This ensures the browser renders the page in standards mode rather than quirks mode.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq6">
+                    <label for="faq6" class="faq-question">What's the difference between div and span?</label>
+                    <div class="faq-answer">
+                        <p>div is a block-level element used to group and structure content, while span is an inline element used for styling or applying CSS to a portion of text. Use &lt;div&gt; for larger sections of content and &lt;span&gt; for smaller, inline elements.</p>
+
+                        </div>
+                </div>
+            </section>
+
+            <!-- CSS Basics -->
+            <section class="content-section">
+                <h2>CSS Basics</h2>
+                
+                <div class="faq-item">
+                    <input type="checkbox" id="faq7">
+                    <label for="faq7" class="faq-question">What's the difference between margin and padding?</label>
+                    <div class="faq-answer">
+                        <p>Margin is the space outside an element's border, while padding is the space inside the border. Margin controls spacing between elements, and padding controls spacing between the content and the border.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq8">
+                    <label for="faq8" class="faq-question">Why is the alt attribute important for images?</label>
+                    <div class="faq-answer">
+                        <p>The alt attribute provides alternative text for images, which is crucial for accessibility. Screen readers use alt text to describe images to visually impaired users. It also displays if the image fails to load. Always include descriptive alt text that conveys the image's purpose or content.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JavaScript Basics -->
+            <section class="content-section">
+                <h2>JavaScript Basics</h2>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq9">
+                    <label for="faq9" class="faq-question">What is the difference between let, const, and var?</label>
+                    <div class="faq-answer">
+                        <p>let and const are block-scoped variables introduced in ES6, while var is function-scoped. let allows reassignment of values, const declares a constant that cannot be reassigned, and var can be reassigned and hoisted. Use let for variables that will change and const for those that won't.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq10">
+                    <label for="faq10" class="faq-question">What's the difference between == and ===?</label>
+                    <div class="faq-answer">
+                        <p>The == operator performs type coercion, comparing values after converting them to the same type. The === operator is strict equality, comparing both value and type without coercion. Use === for more predictable comparisons and to avoid unexpected behavior from automatic type conversion.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq11">
+                    <label for="faq11" class="faq-question">What are the different data types in JavaScript?</label>
+                    <div class="faq-answer">
+                        <p>JavaScript has several data types: <strong>string</strong> (text), <strong>number</strong> (integers and decimals), <strong>boolean</strong> (true or false), <strong>null</strong> (intentional absence of a value), <strong>undefined</strong> (a variable that has not been assigned a value), <strong>symbol</strong> (unique identifier), and <strong>object</strong>. Additionally, there is a special type called <strong>bigint</strong>, which is used for large integers.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq14">
+                    <label for="faq14" class="faq-question">Do I need to learn HTML before CSS and JavaScript?</label>
+                    <div class="faq-answer">
+                        <p>Yes, HTML is the foundation of web development. HTML provides the structure, CSS adds styling, and JavaScript adds interactivity. You should learn HTML first, then CSS, and finally JavaScript. Understanding HTML is essential before moving to other web technologies.</p>
+                    </div>
+                </div>
+
+                
+            </section>
+
+            <!-- SQL Basics -->
+            <section class="content-section">
+                <h2>SQL Basics</h2>
+                
+                <div class="faq-item">
+                    <input type="checkbox" id="faq12">
+                    <label for="faq12" class="faq-question">What's the difference between INNER JOIN, LEFT JOIN, and RIGHT JOIN?</label>
+                    <div class="faq-answer">
+                        <p><strong>INNER JOIN</strong> returns only rows that have matching values in both tables. <strong>LEFT JOIN</strong> returns all rows from the left table and matching rows from the right table. <strong>RIGHT JOIN</strong> returns all rows from the right table and matching rows from the left table.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq13">
+                    <label for="faq13" class="faq-question">What are SQL indexes and why use them?</label>
+                    <div class="faq-answer">
+                        <p>SQL indexes are database objects that improve the speed of data retrieval operations on a table. They work similarly to an index in a book, allowing the database engine to quickly locate and access specific rows without scanning the entire table. Indexes are particularly useful for large tables and frequently queried columns.</p>
+                             </div>
+                </div>            
+        </section>
+
+                        <!-- FAQ Submission Form -->
+                <section class="content-section">
+            <h2>Ask a Question</h2>
+            <p>Can't find what you're looking for? Submit your question below and our team will get back to you!</p>
+            
+            <form id="faqForm" class="faq-form">
+                <div class="form-group">
+                    <label for="questionName">Name:</label>
+                    <input type="text" id="questionName" name="name" placeholder="Your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="questionEmail">Email:</label>
+                    <input type="email" id="questionEmail" name="email" placeholder="Your email address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="questionSubject">Subject:</label>
+                    <select id="questionSubject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="Java">Java</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="SQL">SQL</option>
+                        <option value="ClassCode Platform">ClassCode Platform</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="questionText">Your Question:</label>
+                    <textarea id="questionText" name="question" placeholder="Type your question here..." rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Question</button>
+            </form>
+        </section>
+
+        <!-- Add this new section to display submissions -->
+        <section class="content-section" id="submissionsSection">
+            <h2>Recent Questions</h2>
+            <div id="submissionsContainer">
+                <p class="no-submissions">No questions submitted yet. Be the first to ask!</p>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>ClassCode is an interactive learning platform dedicated to making coding education accessible to everyone. We provide comprehensive tutorials, hands-on exercises, and practical resources to help students master web development technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/arisya-syahirah-3b54a8262?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> College Dorms University Malaysia Terengganu, Kuala Terengganu, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> +60 1112133856</li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76119@ocean.umt.edu.my">S76119@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S76240@ocean.umt.edu.my">S76240@ocean.umt.edu.my</a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i> 
+                            <a href="mailto:S74232@ocean.umt.edu.my">S74232@ocean.umt.edu.my</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy;2025 ClassCode. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>
