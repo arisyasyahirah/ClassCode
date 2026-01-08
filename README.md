@@ -1,5 +1,7 @@
 # ClassCode
 ClassCode is an interactive online learning platform designed specifically for university students and coding beginners to master essential programming languages through structured, accessible, and practical education.
+# To use
+Download all ZIP files and extract everything into one "ClassCode" folder to keep all materials organized together.
 
 # **ClassCode - Platform Description**
 
